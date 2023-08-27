@@ -1,6 +1,21 @@
 <script setup lang="ts">
 import IconAppleStore from "@/assets/icons/IconAppleStore.vue";
 import IconGooglePlay from "@/assets/icons/IconGooglePlay.vue";
+
+const title = ref("Aucode — L'entrainement en ligne pour les développeurs");
+const description = ref(
+  "Devenir codeur confiant. Plonge dans un univers d'apprentissage interactif du développement web ! Aucode t'offre des quiz adaptés et un feedback en temps réel pour te transformer en un développeur sûr de ses compétences."
+);
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+});
 </script>
 
 <template>
@@ -58,9 +73,11 @@ import IconGooglePlay from "@/assets/icons/IconGooglePlay.vue";
     </div>
 
     <div
-      class="sm:absolute sm:bottom-10 sm:right-10 text-center text-xs sm:text-base sm:text-center sm:mt-5"
+      class="sm:absolute sm:bottom-10 sm:right-10 text-center text-xs sm:text-base sm:text-center sm:mt-5 flex gap-4 items-center"
     >
-      <p>Augalo 2023</p>
+      <p class="hover:underline cursor-pointer">Mentions Légales</p>
+      <p class="hover:underline cursor-pointer">Politique de confidentalité</p>
+      <p class="text-xs">Augalo 2023</p>
     </div>
   </section>
 </template>

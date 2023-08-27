@@ -1,3 +1,5 @@
 <template>
-  <Waiting />
+  <div>
+    <NuxtPage />
+  </div>
 </template>
