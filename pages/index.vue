@@ -19,7 +19,7 @@ useHead({
 </script>
 
 <template>
-  <section class="bg-[#F2F2F2] h-screen relative font-regular">
+  <section class="bg-[#F2F2F2] h-full sm:h-screen relative font-regular">
     <div class="absolute top-5 left-4 sm:left-10">
       <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
         <img
@@ -43,7 +43,7 @@ useHead({
       </div>
     </div>
 
-    <div class="sm:absolute flex sm:bottom-10 sm:left-10 p-5 sm:p-0">
+    <div class="sm:absolute flex sm:bottom-10 sm:left-10 px-5 sm:px-0">
       <div class="max-w-[544px]">
         <p
           class="text-[30px] leading-9 sm:text-[42px] sm:leading-[48px] tracking-tighter font-extra-bold mb-4"
@@ -55,7 +55,9 @@ useHead({
           dès maintenant !
         </p>
 
-        <div class="mt-11 flex gap-3 justify-evenly sm:justify-start">
+        <div
+          class="mt-11 flex flex-col sm:flex-row gap-3 justify-evenly sm:justify-start"
+        >
           <button
             class="bg-[#FFFFFF] text-black px-5 sm:px-10 py-3 rounded-xl flex justify-center items-center gap-2"
           >
@@ -73,10 +75,14 @@ useHead({
     </div>
 
     <div
-      class="sm:absolute sm:bottom-10 sm:right-10 text-center text-xs sm:text-base sm:text-center sm:mt-5 flex gap-4 items-center"
+      class="sm:absolute sm:bottom-10 sm:right-10 text-center text-xs sm:text-base sm:text-center sm:mt-5 flex gap-4 items-center flex-col sm:flex-row mt-10 pb-10 sm:pb-0"
     >
-      <p class="hover:underline cursor-pointer">Mentions Légales</p>
-      <p class="hover:underline cursor-pointer">Politique de confidentalité</p>
+      <NuxtLink to="/legal" class="hover:underline cursor-pointer">
+        Mentions Légales
+      </NuxtLink>
+      <NuxtLink to="/privacy" class="hover:underline cursor-pointer">
+        Politique de confidentalité
+      </NuxtLink>
       <p class="text-xs">Augalo 2023</p>
     </div>
   </section>
