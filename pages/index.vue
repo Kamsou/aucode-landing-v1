@@ -19,7 +19,7 @@ useHead({
 </script>
 
 <template>
-  <section class="bg-[#F2F2F2] h-full sm:h-screen relative font-regular">
+  <section class="bg-[#F2F2F2] sm:h-screen relative font-regular">
     <div class="absolute top-5 left-4 sm:left-10">
       <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
         <img
@@ -75,13 +75,16 @@ useHead({
     </div>
 
     <div
-      class="sm:absolute sm:bottom-10 sm:right-10 text-center text-xs sm:text-base sm:text-center sm:mt-5 flex gap-4 items-center flex-col sm:flex-row mt-10 pb-10 sm:pb-0"
+      class="footer:absolute footer:bottom-10 footer:right-10 text-center text-xs sm:text-base sm:text-center sm:pt-0 flex gap-4 items-center footer:justify-end flex-col sm:flex-row pt-10 pb-10 sm:pb-0 bg-[#F2F2F2]"
     >
       <NuxtLink to="/legal" class="hover:underline cursor-pointer">
         Mentions Légales
       </NuxtLink>
       <NuxtLink to="/privacy" class="hover:underline cursor-pointer">
         Politique de confidentalité
+      </NuxtLink>
+      <NuxtLink to="/cgv" class="hover:underline cursor-pointer">
+        Conditions Générales de Vente
       </NuxtLink>
       <p class="text-xs">Augalo 2023</p>
     </div>
