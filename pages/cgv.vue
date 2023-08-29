@@ -10,7 +10,7 @@ useSeoMeta({
   <section>
     <p
       class="fixed top-0 left-0 border-solid border-2 border-black border-b-4 rounded-xl text-black transform transition duration-300 ease-in-out py-[10px] px-4 hover:scale-105 text-sm cursor-pointer w-20 m-3 sm:m-7 bg-white"
-      @click="router.back()"
+      @click="router.push('/')"
     >
       Retour
     </p>
