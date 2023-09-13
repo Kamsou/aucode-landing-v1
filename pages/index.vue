@@ -57,7 +57,9 @@ useHead({
 </script>
 
 <template>
-  <section class="bg-[#F2F2F2] sm:h-screen relative font-regular">
+  <section
+    class="bg-[#F2F2F2] sm:h-screen relative font-regular footer:overflow-hidden overflow-auto"
+  >
     <div class="absolute top-5 left-4 sm:left-10">
       <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
         <img
@@ -78,7 +80,7 @@ useHead({
     <div class="sm:h-full flex justify-center items-center">
       <div class="sm:max-w-[800px] mx-auto">
         <img
-          src="https://res.cloudinary.com/augalo/image/upload/v1691340575/Aucode/mockup_mwxo0t.png"
+          src="https://res.cloudinary.com/augalo/image/upload/v1694598584/Aucode/mockup_zn1itr.png"
           class="w-full h-auto"
         />
       </div>
@@ -120,7 +122,7 @@ useHead({
     </div>
 
     <div
-      class="footer:absolute footer:bottom-10 footer:right-10 text-center text-xs sm:text-base sm:text-center sm:pt-0 flex gap-4 items-center footer:justify-end flex-col sm:flex-row p-10 footer:p-0 xs:pb-0 bg-[#F2F2F2]"
+      class="footer:absolute footer:bottom-10 footer:right-10 text-center text-xs sm:text-base sm:text-center sm:pt-0 flex gap-4 items-center footer:justify-end flex-col sm:flex-row p-10 footer:p-0 xs:pb-0 bg-[#F2F2F2] bg-transparent"
     >
       <NuxtLink to="/legal" class="hover:underline cursor-pointer">
         Mentions Légales
