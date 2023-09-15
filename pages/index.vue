@@ -60,20 +60,35 @@ useHead({
   <section
     class="bg-[#F2F2F2] sm:h-screen relative font-regular footer:overflow-hidden overflow-auto"
   >
-    <div class="absolute top-5 left-4 sm:left-10">
-      <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
-        <img
-          src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
-        />
+    <div class="flex justify-between items-center mt-7 mx-7">
+      <div>
+        <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
+          <img
+            src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
+          />
+        </div>
       </div>
-    </div>
 
-    <div class="w-[150px] absolute top-5 sm:top-7 right-5 sm:right-10">
-      <div
-        class="border-solid border-2 border-black border-b-4 rounded-xl text-black transform transition duration-300 ease-in-out py-[10px] px-4 hover:scale-105 text-sm cursor-pointer text-center"
-        @click="copyEmailToClipboard"
-      >
-        {{ contactButton }}
+      <div class="flex items-center gap-5">
+        <NuxtLink to="https://twitter.com/aucode_app">
+          <span class="i-simple-icons-x text-xl cursor-pointer" />
+        </NuxtLink>
+
+        <NuxtLink
+          to="https://www.linkedin.com/company/aucode-tech/"
+          target="_blank"
+        >
+          <span class="i-simple-icons-linkedin text-xl cursor-pointer" />
+        </NuxtLink>
+
+        <div class="w-[150px]">
+          <div
+            class="border-solid border-2 border-black border-b-4 rounded-xl text-black transform transition duration-300 ease-in-out py-[10px] px-4 hover:scale-105 text-sm cursor-pointer text-center"
+            @click="copyEmailToClipboard"
+          >
+            {{ contactButton }}
+          </div>
+        </div>
       </div>
     </div>
 

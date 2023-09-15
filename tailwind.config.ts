@@ -1,3 +1,5 @@
+import { getIconCollections, iconsPlugin } from "@egoist/tailwindcss-icons";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [],
@@ -12,4 +14,9 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(["simple-icons"]),
+    }),
+  ],
 };
