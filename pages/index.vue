@@ -137,7 +137,7 @@ useHead({
     </div>
 
     <div
-      class="footer:absolute footer:bottom-10 footer:right-10 text-center text-xs sm:text-base sm:text-center sm:pt-0 flex gap-4 items-center footer:justify-end flex-col sm:flex-row p-10 footer:p-0 xs:pb-0 bg-[#F2F2F2] bg-transparent"
+      class="footer:absolute footer:bottom-10 footer:right-10 text-center text-xs sm:text-center sm:pt-0 flex gap-4 items-center footer:justify-end flex-col sm:flex-row p-10 footer:p-0 xs:pb-0 bg-[#F2F2F2] bg-transparent"
     >
       <NuxtLink to="/legal" class="hover:underline cursor-pointer">
         Mentions Légales
