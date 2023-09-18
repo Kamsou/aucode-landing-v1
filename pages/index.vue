@@ -60,39 +60,45 @@ useHead({
   <section
     class="bg-[#F2F2F2] sm:h-screen relative font-regular footer:overflow-hidden overflow-auto"
   >
-    <div class="flex justify-between items-center mt-7 mx-7">
-      <div>
-        <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
-          <img
-            src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
-          />
+    <div class="absolute w-full">
+      <div class="flex justify-between items-start sm:items-center mt-7 mx-7">
+        <div class="">
+          <div class="max-w-[100px] sm:max-w-[147px] mx-auto">
+            <img
+              src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="flex items-center gap-5">
-        <NuxtLink to="https://twitter.com/aucode_app">
-          <span class="i-simple-icons-x text-xl cursor-pointer" />
-        </NuxtLink>
-
-        <NuxtLink
-          to="https://www.linkedin.com/company/aucode-tech/"
-          target="_blank"
+        <div
+          class="flex flex-col-reverse sm:flex-row items-end gap-5 w-[350px]"
         >
-          <span class="i-simple-icons-linkedin text-xl cursor-pointer" />
-        </NuxtLink>
+          <div class="flex gap-5 justify-end w-1/2">
+            <NuxtLink to="https://twitter.com/aucode_app">
+              <span class="i-simple-icons-x text-xl cursor-pointer" />
+            </NuxtLink>
 
-        <div class="w-[150px]">
-          <div
-            class="border-solid border-2 border-black border-b-4 rounded-xl text-black transform transition duration-300 ease-in-out py-[10px] px-4 hover:scale-105 text-sm cursor-pointer text-center"
-            @click="copyEmailToClipboard"
-          >
-            {{ contactButton }}
+            <NuxtLink
+              to="https://www.linkedin.com/company/aucode-tech/"
+              target="_blank"
+            >
+              <span class="i-simple-icons-linkedin text-xl cursor-pointer" />
+            </NuxtLink>
+          </div>
+
+          <div class="w-[150px]">
+            <div
+              class="border-solid border-2 border-black border-b-4 rounded-xl text-black transform transition duration-300 ease-in-out py-[10px] px-4 hover:scale-105 text-sm cursor-pointer text-center"
+              @click="copyEmailToClipboard"
+            >
+              {{ contactButton }}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="sm:h-full flex justify-center items-center">
+    <div class="sm:h-full flex justify-center items-center pt-14 sm:pt-0">
       <div class="sm:max-w-[800px] mx-auto">
         <img
           src="https://res.cloudinary.com/augalo/image/upload/v1694598584/Aucode/mockup_zn1itr.png"
