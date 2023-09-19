@@ -3,13 +3,19 @@ import IconAppleStore from "@/assets/icons/IconAppleStore.vue";
 import IconGooglePlay from "@/assets/icons/IconGooglePlay.vue";
 
 const stores = [
-  { name: "App Store", icon: IconAppleStore },
-  { name: "Google Play", icon: IconGooglePlay },
+  {
+    name: "App Store",
+    icon: IconAppleStore,
+    url: "https://apps.apple.com/fr/app/aucode/id6463032739",
+  },
+  {
+    name: "Google Play",
+    icon: IconGooglePlay,
+    url: "https://play.google.com/store/apps/details?id=com.aucode.tech&hl=fr",
+  },
 ];
 
 const contactButton = ref("Contactez-nous");
-const waitingMessage = ref("");
-const storeNameClicked = ref("");
 
 const title = ref("Aucode — L'entrainement en ligne pour les développeurs");
 const description = ref(
@@ -34,15 +40,6 @@ async function copyEmailToClipboard() {
     console.error("Failed to copy: ", err);
     setContactButtonText("Erreur !");
   }
-}
-
-function sayWaiting(storeName: string) {
-  waitingMessage.value = `Patience..`;
-  storeNameClicked.value = storeName;
-
-  setTimeout(() => {
-    waitingMessage.value = "";
-  }, 2000);
 }
 
 useHead({
@@ -122,22 +119,21 @@ useHead({
         <div
           class="mt-11 flex flex-col sm:flex-row gap-3 justify-evenly sm:justify-start"
         >
-          <button
+          <NuxtLink
             v-for="store in stores"
             :key="store.name"
-            class="bg-[#FFFFFF] text-black px-5 sm:px-10 py-3 rounded-xl flex justify-center items-center gap-2"
-            @click="() => sayWaiting(store.name)"
+            :to="store.url"
+            target="_blank"
           >
-            <component :is="store.icon" class="w-5" />
-            <p class="text-center">
-              <span
-                v-if="waitingMessage !== '' && store.name === storeNameClicked"
-              >
-                {{ waitingMessage }}
-              </span>
-              <span v-else>{{ store.name }}</span>
-            </p>
-          </button>
+            <button
+              class="bg-[#FFFFFF] text-black px-5 sm:px-10 py-3 rounded-xl flex justify-center items-center gap-2"
+            >
+              <component :is="store.icon" class="w-5" />
+              <p class="text-center">
+                <span>{{ store.name }}</span>
+              </p>
+            </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
