@@ -126,7 +126,7 @@ useHead({
             target="_blank"
           >
             <button
-              class="bg-[#FFFFFF] text-black px-5 sm:px-10 py-3 rounded-xl flex justify-center items-center gap-2"
+              class="bg-[#FFFFFF] text-black px-5 sm:px-10 py-4 rounded-xl flex justify-center items-center gap-2 w-full"
             >
               <component :is="store.icon" class="w-5" />
               <p class="text-center">
