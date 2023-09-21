@@ -150,7 +150,7 @@ useHead({
       <NuxtLink to="/cgv" class="hover:underline cursor-pointer">
         Conditions Générales de Vente
       </NuxtLink>
-      <p class="text-xs">Augalo 2023</p>
+      <p class="text-xs">Aucode 2023</p>
     </div>
   </section>
 </template>
