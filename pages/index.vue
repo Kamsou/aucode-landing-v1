@@ -109,11 +109,10 @@ useHead({
         <p
           class="text-[37px] leading-9 sm:text-[69px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
         >
-        Codeur débutant ? <p class="text-base sm:text-3xl font-extra-bold">Teste-toi et fais des vagues dans la mare tech</p>
+        Codeur débutant ? <p class="text-base sm:text-3xl font-extra-bold tracking-tight">Teste-toi et fais des vagues dans la mare tech</p>
         </p>
-        <p class="text-sm">
-          C'est parti, inscris-toi
-          dès maintenant !
+        <p class="text-sm font-sans">
+          C'est parti, inscris-toi dès maintenant !
         </p>
 
         <div
