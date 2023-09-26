@@ -105,12 +105,12 @@ useHead({
     </div>
 
     <div class="sm:absolute flex sm:bottom-10 sm:left-10 px-5 sm:px-0">
-      <div class="max-w-[644px]">
-        <p
-          class="text-[37px] leading-9 sm:text-[69px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
+      <div class="max-w-[674px]">
+        <div
+          class="text-[37px] leading-9 sm:text-[50px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
         >
         Codeur débutant ? <p class="text-base sm:text-3xl font-extra-bold tracking-tight">Teste-toi et fais des vagues dans la mare tech</p>
-        </p>
+        </div>
         <p class="text-sm font-sans">
           C'est parti, inscris-toi dès maintenant !
         </p>
