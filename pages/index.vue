@@ -104,14 +104,14 @@ useHead({
       </div>
     </div>
 
-    <div class="sm:absolute flex sm:bottom-10 sm:left-10 px-5 sm:px-0">
-      <div class="max-w-[674px]">
+    <div class="sm:absolute flex justify-center sm:bottom-10 sm:left-10 px-5 sm:px-0">
+      <div class="max-w-[600px]">
         <div
-          class="text-[37px] leading-9 sm:text-[50px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
+          class="text-[20px] leading-9 sm:text-[28px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
         >
-        Codeur débutant ? <p class="text-2xl sm:text-3xl font-extra-bold tracking-tight">Teste-toi et fais des vagues dans la mare tech</p>
+        Codeur débutant ? <p class="text-[30px] sm:text-[48px] sm:leading-[43px] font-extra-bold tracking-tight">Teste-toi et fais des vagues dans la mare tech</p>
         </div>
-        <p class="text-sm font-sans">
+        <p class="text-sm font-sans mt-11">
           C'est parti, inscris-toi dès maintenant !
         </p>
 
