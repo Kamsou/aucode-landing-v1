@@ -105,19 +105,19 @@ useHead({
     </div>
 
     <div class="sm:absolute flex sm:bottom-10 sm:left-10 px-5 sm:px-0">
-      <div class="max-w-[544px]">
+      <div class="max-w-[644px]">
         <p
-          class="text-[30px] leading-9 sm:text-[42px] sm:leading-[48px] tracking-tighter font-extra-bold mb-4"
+          class="text-[37px] leading-9 sm:text-[69px] sm:leading-[60px]  tracking-tight font-extra-bold mb-4"
         >
-          L'entrainement en ligne pour les développeurs
+        Codeur débutant ? <p class="text-base sm:text-3xl">Teste-toi et fais des vagues dans la mare tech</p>
         </p>
-        <p class="text-base sm:text-xl">
-          Préparez-vous à réussir vos entretiens dans la tech, Inscrivez-vous
+        <p class="text-sm sm:text-md">
+          C'est parti, inscris-toi
           dès maintenant !
         </p>
 
         <div
-          class="mt-11 flex flex-col sm:flex-row gap-3 justify-evenly sm:justify-start"
+          class="mt-4 flex flex-col sm:flex-row gap-3 justify-evenly sm:justify-start"
         >
           <NuxtLink
             v-for="store in stores"
