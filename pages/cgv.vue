@@ -71,7 +71,7 @@ useSeoMeta({
           <span class="text-2xl font-bold">Article 6 : Prix et paiement</span>
           <p class="description">
             L'accès à l'application est gratuit. Un pack premium est disponible
-            au prix de 19,99€. Valable jusqu'à la prochaine mise à jour du
+            au prix de 9,99€. Valable jusqu'à la prochaine mise à jour du
             contenu de l'application.
           </p>
         </div>
