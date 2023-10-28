@@ -17,9 +17,9 @@ const stores = [
 
 const contactButton = ref("Contactez-nous");
 
-const title = ref("Aucode — L'entrainement en ligne pour les développeurs");
+const title = ref("Aucode — Teste tes connaissances tech avant de postuler");
 const description = ref(
-  "Devenir codeur confiant. Plonge dans un univers d'apprentissage interactif du développement web ! Aucode t'offre des quiz adaptés et un feedback en temps réel pour te transformer en un développeur sûr de ses compétences."
+  "Devenir codeuse confiante. Plonge dans un univers d'apprentissage interactif du développement web ! Aucode t'offre des quiz adaptés et un feedback en temps réel pour te transformer en une développeuse sûre de ses compétences."
 );
 
 function setContactButtonText(text: string, duration = 2000) {
@@ -111,7 +111,7 @@ useHead({
         <div
           class="text-[20px] leading-9 sm:text-[28px] sm:leading-[60px] tracking-tight font-extra-bold mb-4"
         >
-          Codeur débutant ?
+          Codeuse débutante ?
           <p
             class="text-[30px] sm:text-[48px] sm:leading-[43px] font-extra-bold tracking-tight"
           >
