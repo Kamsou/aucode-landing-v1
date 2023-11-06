@@ -8,6 +8,8 @@ import IconBook from "@/assets/icons/IconBook.vue";
 import IconMagnifier from "@/assets/icons/IconMagnifier.vue";
 import IconDialog from "@/assets/icons/IconDialog.vue";
 import IconHeart from "@/assets/icons/IconHeart.vue";
+import IconLinkedin from "@/assets/icons/IconLinkedin.vue";
+import IconX from "@/assets/icons/IconX.vue";
 
 const stores = [
   {
@@ -98,6 +100,19 @@ const categories = [
       "Se sentir à sa place et valorisé, indépendamment de son parcours ou de sa formation.",
   },
 ];
+
+const prices = [
+  {
+    title: "Starter",
+    number: "0 €",
+    features: ["16 Quiz", "Corrections", "Resultats"],
+  },
+  {
+    title: "Premium",
+    number: "9,99 €",
+    features: ["+30 Quiz", "Corrections", "Resultats"],
+  },
+];
 </script>
 
 <template>
@@ -107,7 +122,7 @@ const categories = [
     <div ref="hero" class="flex py-28 px-24">
       <div class="w-[54%]">
         <h1
-          class="text-[4.625rem] tracking-tighter font-bold text-green-dark leading-[4.255rem] z-10 relative"
+          class="text-[4.625rem] max-w-[583px] tracking-tighter font-bold text-green-dark leading-[4.255rem] z-10 relative"
         >
           Teste tes acquis de
           <span class="underline"> développeuse </span> avant de postuler
@@ -207,7 +222,7 @@ const categories = [
             </div>
           </div>
 
-          <div ref="topics" class="my-56">
+          <div ref="topics" class="my-52">
             <h2 class="mb-20 text-7xl tracking-tighter">
               <span class="text-green-light">4</span> thématiques
             </h2>
@@ -215,25 +230,28 @@ const categories = [
             <div
               v-for="(topic, index) in topics"
               :key="topic.name"
-              class="flex items-center gap-8 w-full py-7 border-t border-green-light border-opacity-10"
+              class="flex items-center gap-8 w-full py-7 border-t border-green-light border-opacity-10 justify-between"
             >
-              <div class="w-[10%]">
+              <div class="flex gap-8 w-[39%]">
                 <span
                   class="bg-green-light rounded-full text-green-dark py-2 px-[0.94rem] text-xl h-full"
                 >
                   {{ index + 1 }}
                 </span>
+                <span class="text-[1.625rem]">{{ topic.name }}</span>
               </div>
-              <span class="w-[27%] text-[1.625rem]">{{ topic.name }}</span>
-              <p class="max-w-[26rem] text-sm">
+
+              <p class="text-sm w-[35%]">
                 {{ topic.description }}
               </p>
-              <component :is="topic.icon" class="w-8 text-green-light" />
+              <div class="flex justify-end w-[18%]">
+                <component :is="topic.icon" class="text-green-light" />
+              </div>
             </div>
           </div>
 
           <div ref="syndrom">
-            <span class="text-gray-light text-[2.8125rem] leading-3">
+            <span class="text-gray-light text-[2.8125rem]">
               En finir avec
             </span>
             <h3 class="mb-20 text-7xl tracking-tighter">
@@ -266,7 +284,7 @@ const categories = [
               </div>
             </div>
 
-            <div class="flex gap-6 text-green-dark justify-center mt-20 pb-32">
+            <div class="flex gap-6 text-green-dark justify-center mt-20 pb-96">
               <NuxtLink
                 v-for="store in stores"
                 :key="store.name"
@@ -288,6 +306,156 @@ const categories = [
             </div>
           </div>
         </div>
+      </div>
+
+      <div
+        ref="quiz"
+        class="bg-white text-green-dark flex flex-col justify-center items-center py-16 mx-24 rounded-[2.5rem] transform -translate-y-40"
+      >
+        <img
+          class="w-24"
+          src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
+          alt=""
+        />
+        <h4 class="text-7xl tracking-tighter font-bold mt-7 mb-20">
+          <span class="text-green-light">16</span> Quiz gratuits
+        </h4>
+
+        <div class="flex">
+          <img
+            class="w-[33%]"
+            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
+            alt=""
+          />
+          <img
+            class="w-[33%]"
+            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
+            alt=""
+          />
+          <img
+            class="w-[33%]"
+            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div ref="pricing" class="text-green-dark -mt-20">
+        <h4 class="text-[5rem] font-bold text-center tracking-tighter mb-20">
+          Pricing
+        </h4>
+
+        <div class="flex gap-8 justify-center">
+          <div
+            v-for="price in prices"
+            :key="price.title"
+            class="bg-white flex flex-col items-center justify-center rounded-3xl p-14"
+          >
+            <span class="text-5xl tracking-tighter">{{ price.title }}</span>
+            <span class="text-8xl mt-8">{{ price.number }}</span>
+
+            <ul class="text-2xl text-gray-light leading-7 mt-8">
+              <li v-for="feature in price.features" :key="feature">
+                {{ feature }}
+              </li>
+            </ul>
+
+            <div class="flex gap-6 text-green-dark justify-center mt-8">
+              <NuxtLink
+                v-for="store in stores"
+                :key="store.name"
+                :to="store.url"
+                target="_blank"
+              >
+                <button
+                  class="bg-white max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+                >
+                  <component :is="store.icon" class="w-5" />
+                  <div>
+                    <span class="text-[0.68rem] block leading-3">
+                      Télécharger sur
+                    </span>
+                    <span class="block leading-5">{{ store.name }}</span>
+                  </div>
+                </button>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ref="about" class="mt-28 bg-bg-linear-1 text-white">
+        <div class="px-24">
+          <h5 class="font-bold text-7xl text-center">
+            Qui est derrière <span class="text-green-light">Aucode</span> ?
+          </h5>
+
+          <div class="mt-32 flex gap-24 items-center">
+            <div class="w-1/2">
+              <img
+                src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
+                alt="Portrait de Camille, la fondatrice de Aucode"
+              />
+              <div class="flex gap-6 mt-6">
+                <component
+                  :is="IconLinkedin"
+                  class="w-8 h-8 text-green-light"
+                />
+                <component :is="IconX" class="w-8 h-8 text-green-light" />
+              </div>
+            </div>
+
+            <div class="w-1/2 text-xl">
+              <p class="mb-8">
+                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
+                travaillé étroitement avec des agences et startups innovantes,
+                laissant ma marque à chaque étape.
+              </p>
+              <p class="mb-8">
+                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
+                travaillé étroitement avec des agences et startups innovantes,
+                laissant ma marque à chaque étape.
+              </p>
+              <p class="mb-8">
+                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
+                travaillé étroitement avec des agences et startups innovantes,
+                laissant ma marque à chaque étape.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-28">
+            <p class="text-[1.75rem] w-[90%] mx-auto">
+              C'est avec cette idée en tête que
+              <span class="text-green-light">"Aucode"</span> a vu le jour : un
+              projet pour aider les développeuses à valoriser leur unique
+              contribution au monde de la technologie.
+            </p>
+          </div>
+
+          <div class="flex gap-6 text-green-dark justify-center mt-20 pb-28">
+            <NuxtLink
+              v-for="store in stores"
+              :key="store.name"
+              :to="store.url"
+              target="_blank"
+            >
+              <button
+                class="bg-white max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+              >
+                <component :is="store.icon" class="w-5" />
+                <div>
+                  <span class="text-[0.68rem] block leading-3">
+                    Télécharger sur
+                  </span>
+                  <span class="block leading-5">{{ store.name }}</span>
+                </div>
+              </button>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <Footer />
       </div>
     </div>
   </section>
