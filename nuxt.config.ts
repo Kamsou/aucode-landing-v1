@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-swiper"],
 });
