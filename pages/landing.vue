@@ -505,15 +505,17 @@ const prices = [
           </h5>
 
           <div
-            class="mt-16 md:mt-32 flex flex-col md:flex-row gap-16 md:gap-24 items-center"
+            class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
           >
-            <div class="w-full md:w-1/2">
+            <div class="flex flex-col justify-center w-full lg:w-1/2">
               <img
+                class="max-w-full md:max-w-[400px] mx-auto"
                 src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
                 alt="Portrait de Camille, la fondatrice de Aucode"
               />
+
               <div
-                class="flex justify-center md:justify-normal gap-6 mt-11 md:mt-6"
+                class="flex justify-center lg:justify-normal gap-6 mt-11 md:mt-6"
               >
                 <component
                   :is="IconLinkedin"
