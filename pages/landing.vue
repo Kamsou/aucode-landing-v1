@@ -10,17 +10,11 @@ import IconDialog from "@/assets/icons/IconDialog.vue";
 import IconHeart from "@/assets/icons/IconHeart.vue";
 import IconLinkedin from "@/assets/icons/IconLinkedin.vue";
 import IconX from "@/assets/icons/IconX.vue";
-const slides = ref(
-  Array.from({ length: 3 }, () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const contrast =
-      r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "black" : "white";
-
-    return { bg: `rgb(${r}, ${g}, ${b})`, color: contrast };
-  })
-);
+const slides = [
+  { url: "https://source.unsplash.com/random/240×260/?fruit" },
+  { url: "https://source.unsplash.com/random/240×260/?fruit" },
+  { url: "https://source.unsplash.com/random/240×260/?fruit" },
+];
 const stores = [
   {
     name: "l'App Store",
@@ -127,20 +121,23 @@ const prices = [
 
 <template>
   <section
-    class="w-full sm:max-w-[1440px] mx-auto font-regular tracking-tighter"
+    class="w-full md:max-w-[1440px] mx-auto font-regular tracking-tighter"
   >
-    <Header class="pt-6 sm:pt-10 mx-6 sm:mx-24" />
+    <Header class="pt-6 md:pt-10 mx-6 md:mx-24" />
 
-    <div ref="hero" class="sm:flex py-20 sm:py-28 px-6 sm:px-24">
-      <div class="w-full sm:w-[54%]">
+    <div
+      ref="hero"
+      class="md:flex py-20 md:py-28 px-6 md:px-24 md:overflow-x-hidden"
+    >
+      <div class="w-full md:max-w-[50%]">
         <h1
-          class="text-[2.6rem] sm:text-[4.625rem] max-w-[583px] tracking-tighter font-bold text-green-dark leading-[2.76rem] sm:leading-[4.255rem] z-10 relative"
+          class="text-[11vw] md:text-[3.1rem] lg:text-[4.625rem] w-full md:w-[380px] lg:w-[583px] tracking-tighter font-bold text-green-dark leading-[11vw] md:leading-[2.8rem] lg:leading-[4.255rem] z-10 relative"
         >
           Teste tes acquis de
           <span class="underline"> développeuse </span> avant de postuler
         </h1>
         <p class="my-7">Inscris-toi gratuitement maintenant !</p>
-        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6">
           <NuxtLink
             v-for="(store, index) in stores"
             :key="index"
@@ -148,7 +145,7 @@ const prices = [
             target="_blank"
           >
             <button
-              class="bg-white w-full sm:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+              class="bg-white w-full md:w-[11rem] lg:w-[13rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
             >
               <component :is="store.icon" class="w-5" />
               <div>
@@ -162,26 +159,29 @@ const prices = [
         </div>
       </div>
 
-      <div class="relative w-full sm:w-[46%] mt-28 sm:mt-0">
+      <div
+        class="relative max-w-full md:max-w-[400px] lg:max-w-[480px] mt-12 md:mt-0"
+      >
         <div
-          class="bg-green-light rounded-xl absolute top-0 left-4 sm:left-24 py-2 px-3 text-xs font-bold flex items-center gap-[0.38rem]"
+          class="bg-green-light rounded-xl absolute top-0 left-4 md:left-24 py-1 text-xs font-bold flex justify-center items-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
         >
           <img
-            class="w-[2.3rem] sm:w-[3.3125rem]"
+            class="w-[2.5rem] md:w-[3.3rem]"
             src="https://res.cloudinary.com/augalo/image/upload/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
             alt=""
           />
-          <span class="uppercase">Rejoins-nous!</span>
+          <span class="uppercase">Rejoins-nous !</span>
         </div>
         <img
+          class="max-w-full md:max-w-fit"
           src="https://res.cloudinary.com/augalo/image/upload/v1699275034/Aucode/mockup-landing_ky5psm.png"
           alt=""
         />
         <div
-          class="bg-green-light rounded-xl absolute bottom-12 right-1 sm:right-32 py-2 px-3 text-xs font-bold flex items-center gap-[0.38rem]"
+          class="bg-green-light rounded-xl absolute bottom-5 md:bottom-12 right-5 md:right-12 lg:right-20 text-xs font-bold flex items-center justify-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
         >
           <img
-            class="w-[1.6rem] sm:w-[2.6rem]"
+            class="w-[2.3rem] md:w-[3.3rem]"
             src="https://res.cloudinary.com/augalo/image/upload/v1689610705/Aucode/duck_yosxyk.png"
             alt=""
           />
@@ -190,44 +190,68 @@ const prices = [
       </div>
     </div>
 
-    <div class="w-full text-white">
+    <div class="w-full text-white mt-20 md:mt-0">
       <div
         class="bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full w-full relative"
       >
         <div
           class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
         />
-        <div class="px-6 sm:px-24 rounded-t-[2.5rem] relative h-full">
+        <div class="md:px-24 rounded-t-[2.5rem] relative h-full">
           <div ref="reviews">
-            <!-- // Review -->
-            <Swiper
-              class="w-full sm:hidden"
-              :modules="[SwiperEffectCoverflow, SwiperPagination]"
-              :slides-per-view="3"
-              :grabCursor="true"
-              :space-between="24"
-              :centeredSlides="true"
-              :pagination="{ clickable: false }"
-              :coverflow-effect="{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: true,
-              }"
-            >
-              <SwiperSlide
-                class="swiper-cards"
-                v-for="(slide, idx) in slides"
-                :key="idx"
-                :style="`background-color: ${slide.bg}; color: ${slide.color}`"
+            <div class="md:hidden transform -translate-y-20">
+              <Swiper
+                class="w-full"
+                :modules="[SwiperEffectCoverflow, SwiperPagination]"
+                :slides-per-view="'auto'"
+                :grabCursor="true"
+                :space-between="24"
+                :centeredSlides="true"
+                :pagination="{ clickable: false }"
+                :coverflow-effect="{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2,
+                  slideShadows: true,
+                }"
               >
-                {{ idx }}
-              </SwiperSlide>
+                <SwiperSlide
+                  class="bg-white p-6 rounded-2xl w-[15rem] flex flex-col justify-between"
+                  v-for="card in cards"
+                  :key="card.user"
+                >
+                  <div class="flex items-center justify-between">
+                    <div class="flex">
+                      <div v-for="n in 5" :key="n">
+                        <IconStar class="w-[14px] text-green-light" />
+                      </div>
+                    </div>
+                    <component :is="card.icon" class="w-4 text-gray-light" />
+                  </div>
 
-              <SwiperPagination class="swiper-pagination" />
-            </Swiper>
-            <div class="w-full hidden sm:flex gap-5 transform -translate-y-20">
+                  <div class="flex flex-col justify-between">
+                    <div class="py-11 h-[180px]">
+                      <p class="text-green-dark text-sm">
+                        {{ card.review }}
+                      </p>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                      <p class="text-green-light uppercase text-xs">
+                        {{ card.user }}
+                      </p>
+                      <p class="text-gray-light text-[0.625rem]">
+                        {{ card.date }}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                <SwiperPagination class="swiper-pagination" />
+              </Swiper>
+            </div>
+            <div class="w-full hidden md:flex gap-5 transform -translate-y-20">
               <div
                 v-for="card in cards"
                 :key="card.user"
@@ -262,8 +286,8 @@ const prices = [
             </div>
           </div>
 
-          <div ref="topics" class="mt-28 mb-12 sm:mb-0 sm:my-52">
-            <h2 class="mb-20 text-5xl sm:text-7xl tracking-tighter">
+          <div ref="topics" class="mt-28 mb-12 md:mb-0 md:my-52">
+            <h2 class="mb-20 text-5xl md:text-7xl tracking-tighter">
               <span class="text-green-light">4</span> thématiques
             </h2>
 
@@ -272,35 +296,35 @@ const prices = [
               :key="topic.name"
               class="flex items-center gap-8 w-full py-7 border-t border-green-light border-opacity-10 justify-between"
             >
-              <div class="flex gap-8 w-[80%] sm:w-[39%]">
+              <div class="flex gap-8 w-[80%] md:w-[39%]">
                 <span
-                  class="bg-green-light rounded-full text-green-dark py-1 sm:py-2 px-[0.94rem] text-xl h-full"
+                  class="bg-green-light rounded-full text-green-dark py-1 md:py-2 px-[0.94rem] text-xl h-full"
                 >
                   {{ index + 1 }}
                 </span>
                 <span class="text-[1.625rem]">{{ topic.name }}</span>
               </div>
 
-              <p class="text-sm w-[35%] hidden sm:block">
+              <p class="text-sm w-[35%] hidden md:block">
                 {{ topic.description }}
               </p>
-              <div class="flex justify-end w-[20%] sm:w-[18%]">
+              <div class="flex justify-end w-[20%] md:w-[18%]">
                 <component :is="topic.icon" class="text-green-light" />
               </div>
             </div>
           </div>
 
-          <div ref="syndrom" class="sm:mt-60">
-            <span class="text-gray-light text-2xl sm:text-[2.8125rem]">
+          <div ref="syndrom" class="md:mt-60">
+            <span class="text-gray-light text-2xl md:text-[2.8125rem]">
               En finir avec
             </span>
-            <h3 class="mb-20 text-5xl sm:text-7xl tracking-tighter">
+            <h3 class="mb-20 text-5xl md:text-7xl tracking-tighter">
               Le syndrome de <span class="text-green-light">l’imposteur</span>
             </h3>
 
             <!-- // Syndrom -->
             <Swiper
-              class="w-full sm:hidden"
+              class="w-full md:hidden"
               :modules="[SwiperEffectCoverflow, SwiperPagination]"
               :slides-per-view="3"
               :grabCursor="true"
@@ -316,16 +340,16 @@ const prices = [
               }"
             >
               <SwiperSlide
-                class="swiper-cards sm:hidden"
+                class="swiper-cards md:hidden"
                 v-for="(slide, idx) in slides"
                 :key="idx"
-                :style="`background-color: ${slide.bg}; color: ${slide.color}`"
               >
+                <img :src="slide.url" alt="" />
                 {{ idx }}
               </SwiperSlide>
             </Swiper>
 
-            <div class="hidden sm:flex gap-4">
+            <div class="hidden md:flex gap-4">
               <div
                 v-for="(category, index) in categories"
                 :key="index"
@@ -352,7 +376,7 @@ const prices = [
             </div>
 
             <div
-              class="flex flex-col sm:flex-row gap-6 text-green-dark justify-center mt-20 pb-96"
+              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-20 pb-96"
             >
               <NuxtLink
                 v-for="store in stores"
@@ -361,7 +385,7 @@ const prices = [
                 target="_blank"
               >
                 <button
-                  class="bg-white w-full sm:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+                  class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
                 >
                   <component :is="store.icon" class="w-5" />
                   <div>
@@ -379,15 +403,15 @@ const prices = [
 
       <div
         ref="quiz"
-        class="bg-white text-green-dark flex flex-col justify-center items-center py-8 sm:py-16 mx-6 sm:mx-24 rounded-[2.5rem] transform -translate-y-28 sm:-translate-y-40"
+        class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 md:mx-24 rounded-[2.5rem] transform -translate-y-28 md:-translate-y-40"
       >
         <img
-          class="w-14 sm:w-24"
+          class="w-14 md:w-24"
           src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
           alt=""
         />
         <h4
-          class="text-5xl sm:text-7xl tracking-tighter font-bold mt-7 mb-20 text-center"
+          class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-20 text-center"
         >
           <span class="text-green-light">16</span> Quiz gratuits
         </h4>
@@ -413,26 +437,26 @@ const prices = [
 
       <div ref="pricing" class="text-green-dark -mt-10">
         <h4
-          class="text-5xl sm:text-[5rem] font-bold text-center tracking-tighter mb-20"
+          class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-20"
         >
           Pricing
         </h4>
 
         <div
-          class="flex flex-col sm:flex-row gap-8 justify-center mx-6 sm:mx-0"
+          class="flex flex-col md:flex-row gap-8 justify-center mx-6 md:mx-0"
         >
           <div
             v-for="price in prices"
             :key="price.title"
-            class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 sm:p-14 py-14 px-6"
+            class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 md:p-3 lg:p-14 py-14 px-6"
           >
-            <span class="text-4xl sm:text-5xl tracking-tighter">{{
+            <span class="text-4xl md:text-5xl tracking-tighter">{{
               price.title
             }}</span>
-            <span class="text-5xl sm:text-8xl mt-8">{{ price.number }}</span>
+            <span class="text-5xl md:text-8xl mt-8">{{ price.number }}</span>
 
             <ul
-              class="text-xl text-center sm:text-2xl text-gray-light leading-7 mt-8"
+              class="text-xl text-center md:text-2xl text-gray-light leading-7 mt-8"
             >
               <li v-for="feature in price.features" :key="feature">
                 {{ feature }}
@@ -440,7 +464,7 @@ const prices = [
             </ul>
 
             <div
-              class="flex flex-col sm:flex-row gap-3 sm:gap-6 text-green-dark justify-center mt-5 sm:mt-8 w-full"
+              class="flex flex-col md:flex-row gap-3 md:gap-6 text-green-dark justify-center mt-5 md:mt-8 w-full"
             >
               <NuxtLink
                 v-for="store in stores"
@@ -449,7 +473,7 @@ const prices = [
                 target="_blank"
               >
                 <button
-                  class="bg-white w-full sm:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+                  class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
                 >
                   <component :is="store.icon" class="w-5" />
                   <div>
@@ -466,22 +490,22 @@ const prices = [
       </div>
 
       <div ref="about" class="mt-28 bg-bg-linear-1 text-white">
-        <div class="px-6 sm:px-24">
+        <div class="px-6 md:px-24">
           <h5
-            class="font-bold text-5xl sm:text-7xl text-center tracking-tighter"
+            class="font-bold text-5xl md:text-7xl text-center tracking-tighter"
           >
             Qui est derrière <span class="text-green-light">Aucode</span> ?
           </h5>
 
           <div
-            class="mt-16 sm:mt-32 flex flex-col sm:flex-row gap-16 md:gap-24 items-center"
+            class="mt-16 md:mt-32 flex flex-col md:flex-row gap-16 md:gap-24 items-center"
           >
-            <div class="w-full sm:w-1/2">
+            <div class="w-full md:w-1/2">
               <img
                 src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
                 alt="Portrait de Camille, la fondatrice de Aucode"
               />
-              <div class="flex justify-center sm:justify-normal gap-6 mt-6">
+              <div class="flex justify-center md:justify-normal gap-6 mt-6">
                 <component
                   :is="IconLinkedin"
                   class="w-8 h-8 text-green-light"
@@ -490,7 +514,7 @@ const prices = [
               </div>
             </div>
 
-            <div class="w-full sm:w-1/2 text-base sm:text-xl px-6 sm:px-0">
+            <div class="w-full md:w-1/2 text-base md:text-xl px-6 md:px-0">
               <p class="mb-8 leading-8 opacity-70">
                 Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
                 travaillé étroitement avec des agences et startups innovantes,
@@ -509,8 +533,8 @@ const prices = [
             </div>
           </div>
 
-          <div class="mt-16 px-6 sm:px-0 sm:mt-28">
-            <p class="text-xl sm:text-[1.75rem] w-full sm:w-[90%] mx-auto">
+          <div class="mt-16 px-6 md:px-0 md:mt-28">
+            <p class="text-xl md:text-[1.75rem] w-full md:w-[90%] mx-auto">
               C'est avec cette idée en tête que
               <span class="text-green-light">"Aucode"</span> a vu le jour : un
               projet pour aider les développeuses à valoriser leur unique
@@ -519,7 +543,7 @@ const prices = [
           </div>
 
           <div
-            class="flex flex-col sm:flex-row gap-6 text-green-dark justify-center mt-20 pb-28"
+            class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-20 pb-28"
           >
             <NuxtLink
               v-for="store in stores"
@@ -528,7 +552,7 @@ const prices = [
               target="_blank"
             >
               <button
-                class="bg-white w-full sm:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
+                class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
               >
                 <component :is="store.icon" class="w-5" />
                 <div>
@@ -591,7 +615,15 @@ const prices = [
 
     &-active {
       background: #bff92b;
+      width: 1.69rem;
+      border-radius: 2rem;
+      transition: all 0.3s ease-in-out;
     }
   }
+}
+
+.swiper-slide {
+  width: 240px;
+  height: 264px;
 }
 </style>
