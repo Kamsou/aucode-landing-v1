@@ -10,11 +10,9 @@ import IconDialog from "@/assets/icons/IconDialog.vue";
 import IconHeart from "@/assets/icons/IconHeart.vue";
 import IconLinkedin from "@/assets/icons/IconLinkedin.vue";
 import IconX from "@/assets/icons/IconX.vue";
-const slides = [
-  { url: "https://source.unsplash.com/random/240×260/?fruit" },
-  { url: "https://source.unsplash.com/random/240×260/?fruit" },
-  { url: "https://source.unsplash.com/random/240×260/?fruit" },
-];
+import IconHuman from "@/assets/icons/IconHuman.vue";
+import IconEye from "@/assets/icons/IconEye.vue";
+
 const stores = [
   {
     name: "l'App Store",
@@ -52,31 +50,33 @@ const cards = [
   },
 ];
 
-const topics = [
-  {
-    name: "Front-end",
-    description: `Le "front-end" fait référence à la partie visible d'une application ou d'un site web, celle avec laquelle l'utilisateur interagit directement.`,
-    icon: IconPencil,
-  },
-  {
-    name: "Back-end",
-    description: `Le "back-end" est tout ce qui se passe en coulisse pour faire fonctionner une application ou un site web. Cela comprend les serveurs,
+const topics = computed(() => {
+  return [
+    {
+      name: "Front-end",
+      description: `Le "front-end" fait référence à la partie visible d'une application ou d'un site web, celle avec laquelle l'utilisateur interagit directement.`,
+      icon: IconPencil,
+    },
+    {
+      name: "Back-end",
+      description: `Le "back-end" est tout ce qui se passe en coulisse pour faire fonctionner une application ou un site web. Cela comprend les serveurs,
 les bases de données, les applications, les API (interfaces de programmation d'applications) et toute autre infrastructure nécessaire.`,
-    icon: IconVector,
-  },
-  {
-    name: "Culture générale",
-    description: `La culture générale dans la tech est une compréhension de base des tendances, innovations et enjeux du monde technologique.
+      icon: IconVector,
+    },
+    {
+      name: "Culture générale",
+      description: `La culture générale dans la tech est une compréhension de base des tendances, innovations et enjeux du monde technologique.
 Elle englobe la connaissance des principaux acteurs, des débats actuels et des impacts de la technologie sur la société.`,
-    icon: IconBook,
-  },
-  {
-    name: "Prospection",
-    description: `La prospection est l'acte de rechercher activement de nouveaux clients ou opportunités pour une entreprise ou un service, souvent
+      icon: IconBook,
+    },
+    {
+      name: "Prospection",
+      description: `La prospection est l'acte de rechercher activement de nouveaux clients ou opportunités pour une entreprise ou un service, souvent
 à travers des démarches directes comme les appels, les emails ou les rencontres.`,
-    icon: IconMagnifier,
-  },
-];
+      icon: IconMagnifier,
+    },
+  ];
+});
 
 const categories = [
   {
@@ -92,13 +92,13 @@ const categories = [
       "Apprenez à gérer la pression inhérente aux présentations et discussions techniques.",
   },
   {
-    icon: IconVector,
+    icon: IconHuman,
     title: "Confiance",
     description:
       "Cultivez et valorisez votre estime de soi ainsi que vos compétences, quel que soit votre parcours.",
   },
   {
-    icon: IconVector,
+    icon: IconEye,
     title: "Perception",
     description:
       "Se sentir à sa place et valorisé, indépendamment de son parcours ou de sa formation.",
@@ -201,7 +201,7 @@ const prices = [
           <div ref="reviews">
             <div class="md:hidden transform -translate-y-20">
               <Swiper
-                class="w-full"
+                class="w-full swiper-reviews-wrapper"
                 :modules="[SwiperEffectCoverflow, SwiperPagination]"
                 :slides-per-view="'auto'"
                 :grabCursor="true"
@@ -286,19 +286,24 @@ const prices = [
             </div>
           </div>
 
-          <div ref="topics" class="mt-28 mb-12 md:mb-0 md:my-52">
-            <h2 class="mb-20 text-5xl md:text-7xl tracking-tighter">
+          <div
+            ref="topics"
+            class="mt-8 md:mt-28 mb-12 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
+          >
+            <h2
+              class="mb-12 md:mb-20 text-[3.25rem] md:text-7xl tracking-tighter"
+            >
               <span class="text-green-light">4</span> thématiques
             </h2>
 
             <div
               v-for="(topic, index) in topics"
               :key="topic.name"
-              class="flex items-center gap-8 w-full py-7 border-t border-green-light border-opacity-10 justify-between"
+              class="flex items-center gap-0 md:gap-8 w-full py-7 border-t border-green-light border-opacity-10 justify-between"
             >
-              <div class="flex gap-8 w-[80%] md:w-[39%]">
+              <div class="flex gap-8 w-full md:w-[39%]">
                 <span
-                  class="bg-green-light rounded-full text-green-dark py-1 md:py-2 px-[0.94rem] text-xl h-full"
+                  class="bg-green-light rounded-full text-green-dark py-[0.4rem] md:py-2 px-[0.94rem] text-xl h-full"
                 >
                   {{ index + 1 }}
                 </span>
@@ -309,47 +314,70 @@ const prices = [
                 {{ topic.description }}
               </p>
               <div class="flex justify-end w-[20%] md:w-[18%]">
-                <component :is="topic.icon" class="text-green-light" />
+                <component :is="topic.icon" class="text-green-light w-8" />
               </div>
             </div>
           </div>
 
           <div ref="syndrom" class="md:mt-60">
-            <span class="text-gray-light text-2xl md:text-[2.8125rem]">
-              En finir avec
-            </span>
-            <h3 class="mb-20 text-5xl md:text-7xl tracking-tighter">
-              Le syndrome de <span class="text-green-light">l’imposteur</span>
-            </h3>
+            <div class="mx-6 md:mx-0">
+              <span class="text-gray-light text-2xl md:text-[2.8125rem]">
+                En finir avec
+              </span>
 
-            <!-- // Syndrom -->
-            <Swiper
-              class="w-full md:hidden"
-              :modules="[SwiperEffectCoverflow, SwiperPagination]"
-              :slides-per-view="3"
-              :grabCursor="true"
-              :space-between="24"
-              :centeredSlides="true"
-              :pagination="{ clickable: false }"
-              :coverflow-effect="{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: true,
-              }"
-            >
-              <SwiperSlide
-                class="swiper-cards md:hidden"
-                v-for="(slide, idx) in slides"
-                :key="idx"
+              <h3
+                class="mb-[4.5rem] md:mb-20 text-5xl md:text-7xl tracking-tighter"
               >
-                <img :src="slide.url" alt="" />
-                {{ idx }}
-              </SwiperSlide>
-            </Swiper>
+                Le syndrome de <span class="text-green-light">l’imposteur</span>
+              </h3>
+            </div>
 
-            <div class="hidden md:flex gap-4">
+            <div class="lg:hidden">
+              <Swiper
+                class="swiper-cards-wrapper w-full"
+                :modules="[SwiperEffectCoverflow, SwiperPagination]"
+                :slides-per-view="'auto'"
+                :grabCursor="true"
+                :space-between="24"
+                :centeredSlides="true"
+                :pagination="{ clickable: false }"
+                :coverflow-effect="{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2,
+                  slideShadows: true,
+                }"
+              >
+                <SwiperSlide
+                  v-for="(category, index) in categories"
+                  :key="index"
+                  class="swiper-cards md:hidden group flex flex-col rounded-3xl border border-green-light justify-between w-[25%] relative hover:bg-green-light transition-all duration-500"
+                >
+                  <component
+                    :is="category.icon"
+                    class="text-green-light absolute top-6 right-6 group-hover:text-green-dark transition-all duration-500"
+                  />
+
+                  <div
+                    class="flex flex-col h-full justify-end md:block md:pt-44 px-6 md:px-7 pb-8 md:pb-14"
+                  >
+                    <span
+                      class="text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
+                    >
+                      {{ category.title }}
+                    </span>
+                    <p
+                      class="text-gray-light text-sm group-hover:text-green-dark transition-all duration-500"
+                    >
+                      {{ category.description }}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
+            <div class="hidden lg:flex w-full gap-4">
               <div
                 v-for="(category, index) in categories"
                 :key="index"
@@ -376,7 +404,7 @@ const prices = [
             </div>
 
             <div
-              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-20 pb-96"
+              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-14 md:mt-20 pb-56 md:pb-96 mx-6 md:mx-0"
             >
               <NuxtLink
                 v-for="store in stores"
@@ -437,7 +465,7 @@ const prices = [
 
       <div ref="pricing" class="text-green-dark -mt-10">
         <h4
-          class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-20"
+          class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20"
         >
           Pricing
         </h4>
@@ -448,43 +476,22 @@ const prices = [
           <div
             v-for="price in prices"
             :key="price.title"
-            class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 md:p-3 lg:p-14 py-14 px-6"
+            class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 lg:p-14 py-12 px-6 md:w-[20rem] lg:w-[29rem]"
           >
-            <span class="text-4xl md:text-5xl tracking-tighter">{{
-              price.title
+            <span class="text-4xl md:text-5xl tracking-tighter">
+              {{ price.title }}
+            </span>
+            <span class="text-[3.5rem] md:text-8xl mt-8">{{
+              price.number
             }}</span>
-            <span class="text-5xl md:text-8xl mt-8">{{ price.number }}</span>
 
             <ul
-              class="text-xl text-center md:text-2xl text-gray-light leading-7 mt-8"
+              class="text-xl text-center md:text-2xl text-gray-light leading-8 mt-8"
             >
               <li v-for="feature in price.features" :key="feature">
                 {{ feature }}
               </li>
             </ul>
-
-            <div
-              class="flex flex-col md:flex-row gap-3 md:gap-6 text-green-dark justify-center mt-5 md:mt-8 w-full"
-            >
-              <NuxtLink
-                v-for="store in stores"
-                :key="store.name"
-                :to="store.url"
-                target="_blank"
-              >
-                <button
-                  class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
-                >
-                  <component :is="store.icon" class="w-5" />
-                  <div>
-                    <span class="text-[0.68rem] block leading-3">
-                      Télécharger sur
-                    </span>
-                    <span class="block leading-5">{{ store.name }}</span>
-                  </div>
-                </button>
-              </NuxtLink>
-            </div>
           </div>
         </div>
       </div>
@@ -505,7 +512,9 @@ const prices = [
                 src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
                 alt="Portrait de Camille, la fondatrice de Aucode"
               />
-              <div class="flex justify-center md:justify-normal gap-6 mt-6">
+              <div
+                class="flex justify-center md:justify-normal gap-6 mt-11 md:mt-6"
+              >
                 <component
                   :is="IconLinkedin"
                   class="w-8 h-8 text-green-light"
@@ -514,27 +523,32 @@ const prices = [
               </div>
             </div>
 
-            <div class="w-full md:w-1/2 text-base md:text-xl px-6 md:px-0">
-              <p class="mb-8 leading-8 opacity-70">
+            <div class="w-full md:w-1/2 text-sm md:text-xl px-6 md:px-0">
+              <p class="mb-8 leading-7 opacity-70">
                 Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
                 travaillé étroitement avec des agences et startups innovantes,
                 laissant ma marque à chaque étape.
               </p>
-              <p class="mb-8 leading-8 opacity-70">
-                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
-                travaillé étroitement avec des agences et startups innovantes,
-                laissant ma marque à chaque étape.
+              <p class="mb-8 leading-7 opacity-70">
+                Cependant, un besoin croissant de façonner quelque chose de
+                véritablement personnel m'a conduit à prendre l'initiative il y
+                a deux ans en lançant mes propres projets. J'ai toujours cru en
+                la force de la collaboration et de l'esprit d'équipe, mais j'ai
+                également réalisé que la confiance en soi est fondamentale pour
+                toutes développeuses, indépendamment de son expérience.
               </p>
-              <p class="mb-8 leading-8 opacity-70">
-                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
-                travaillé étroitement avec des agences et startups innovantes,
-                laissant ma marque à chaque étape.
+              <p class="mb-8 leading-7 opacity-70">
+                C'est avec cette idée en tête que "Aucode" a vu le jour : un
+                projet pour aider les développeuses à valoriser leur unique
+                contribution au monde de la technologie.
               </p>
             </div>
           </div>
 
           <div class="mt-16 px-6 md:px-0 md:mt-28">
-            <p class="text-xl md:text-[1.75rem] w-full md:w-[90%] mx-auto">
+            <p
+              class="text-lg md:text-[1.75rem] md:leading-10 w-full md:w-[90%] mx-auto"
+            >
               C'est avec cette idée en tête que
               <span class="text-green-light">"Aucode"</span> a vu le jour : un
               projet pour aider les développeuses à valoriser leur unique
@@ -543,7 +557,7 @@ const prices = [
           </div>
 
           <div
-            class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-20 pb-28"
+            class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-16 md:mt-20 pb-28"
           >
             <NuxtLink
               v-for="store in stores"
@@ -565,33 +579,6 @@ const prices = [
             </NuxtLink>
           </div>
         </div>
-
-        <!-- <Swiper
-          :modules="[SwiperEffectCoverflow, SwiperPagination]"
-          :slides-per-view="3"
-          :grabCursor="true"
-          :space-between="24"
-          :centeredSlides="true"
-          :pagination="{ clickable: false }"
-          :coverflow-effect="{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2,
-            slideShadows: true,
-          }"
-        >
-          <SwiperSlide
-            class="swiper-cards"
-            v-for="(slide, idx) in slides"
-            :key="idx"
-            :style="`background-color: ${slide.bg}; color: ${slide.color}`"
-          >
-            {{ idx }}
-          </SwiperSlide>
-
-          <SwiperPagination class="swiper-pagination" />
-        </Swiper> -->
 
         <Footer />
       </div>
@@ -622,7 +609,24 @@ const prices = [
   }
 }
 
-.swiper-slide {
+.swiper-cards-wrapper .swiper-slide {
+  width: 18.7rem;
+  height: 23.8rem;
+
+  &-active {
+    background: #bff92b;
+    transition: all 0.3s ease-in-out;
+
+    svg,
+    div span,
+    p {
+      color: #43473a;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.swiper-reviews-wrapper .swiper-slide {
   width: 240px;
   height: 264px;
 }
