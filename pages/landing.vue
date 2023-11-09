@@ -134,7 +134,7 @@ const screenshots = [
     >
       <div class="w-full md:max-w-[50%]">
         <h1
-          class="text-[11vw] md:text-[3.1rem] lg:text-[4.625rem] w-full md:w-[380px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[2.8rem] lg:leading-[4.255rem] z-10 relative"
+          class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[420px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
         >
           Teste tes acquis de
           <span class="underline"> développeuse </span> avant de postuler
@@ -403,56 +403,58 @@ const screenshots = [
         </div>
       </div>
 
-      <div
-        ref="quiz"
-        class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 md:mx-24 rounded-[2.5rem] transform -translate-y-28 md:-translate-y-40"
-      >
-        <img
-          class="w-14 md:w-24"
-          src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
-          alt="Icone du canard Aucode"
-        />
-        <h4
-          class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
+      <div class="md:mx-24">
+        <div
+          ref="quiz"
+          class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 rounded-[2.5rem] transform -translate-y-28 md:-translate-y-40 md:max-w-[1440px] md:mx-auto"
         >
-          <span class="text-green-light">16</span> Quiz gratuits
-        </h4>
-
-        <div class="hidden md:flex justify-center">
           <img
-            v-for="screenshot in screenshots"
-            :key="screenshot.url"
-            class="w-[30%]"
-            :src="screenshot.url"
-            :alt="screenshot.alt"
+            class="w-14 md:w-24"
+            src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
+            alt="Icone du canard Aucode"
           />
-        </div>
-
-        <div class="md:hidden w-full">
-          <Swiper
-            class="w-full swiper-screenshots-wrapper"
-            :modules="[SwiperEffectCoverflow, SwiperPagination]"
-            :slides-per-view="'auto'"
-            :grabCursor="true"
-            :space-between="24"
-            :centeredSlides="true"
-            :pagination="{ clickable: false }"
-            :coverflow-effect="{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 2,
-              slideShadows: true,
-            }"
+          <h4
+            class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
           >
-            <SwiperSlide
-              class="bg-white rounded-2xl w-[15rem] flex flex-col justify-between"
+            <span class="text-green-light">16</span> Quiz gratuits
+          </h4>
+
+          <div class="hidden md:flex justify-center">
+            <img
               v-for="screenshot in screenshots"
               :key="screenshot.url"
+              class="w-[30%]"
+              :src="screenshot.url"
+              :alt="screenshot.alt"
+            />
+          </div>
+
+          <div class="md:hidden w-full">
+            <Swiper
+              class="w-full swiper-screenshots-wrapper"
+              :modules="[SwiperEffectCoverflow, SwiperPagination]"
+              :slides-per-view="'auto'"
+              :grabCursor="true"
+              :space-between="24"
+              :centeredSlides="true"
+              :pagination="{ clickable: false }"
+              :coverflow-effect="{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true,
+              }"
             >
-              <img :src="screenshot.url" :alt="screenshot.alt" />
-            </SwiperSlide>
-          </Swiper>
+              <SwiperSlide
+                class="bg-white rounded-2xl w-[15rem] flex flex-col justify-between"
+                v-for="screenshot in screenshots"
+                :key="screenshot.url"
+              >
+                <img :src="screenshot.url" :alt="screenshot.alt" />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
       </div>
 

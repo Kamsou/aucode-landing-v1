@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-green-dark bg-white flex flex-col md:flex-row md:justify-between px-0 pt-9 md:py-9 rounded-t-[3rem] md:px-24 md:flex uppercase md:normal-case"
+    class="text-green-dark bg-white flex flex-col md:flex-row md:justify-between px-0 pt-9 md:py-9 rounded-t-[3rem] md:px-20 lg:px-24 md:flex uppercase md:normal-case"
   >
     <div class="flex flex-col md:flex-row items-center text-center md:w-[30%]">
       <img
