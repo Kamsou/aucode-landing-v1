@@ -513,7 +513,7 @@ const screenshots = [
                 <Buttons class="flex justify-center w-full" />
               </div>
               <h5
-                class="font-bold text-5xl sm:text-xl md:text-7xl text-center tracking-tighter"
+                class="font-bold text-[2.8rem] sm:text-xl md:text-7xl text-center tracking-tighter"
               >
                 Qui est derrière <span class="text-green-light">Aucode</span> ?
               </h5>
