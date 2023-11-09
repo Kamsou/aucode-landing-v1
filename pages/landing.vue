@@ -155,15 +155,15 @@ const screenshots = [
             <img
               class="w-[2.5rem] md:w-[3.3rem]"
               src="https://res.cloudinary.com/augalo/image/upload/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
-              alt=""
+              alt="Icone du canard Aucode"
             />
             <span class="uppercase">Rejoins-nous !</span>
           </div>
         </Parallax>
         <img
-          class="max-w-full md:max-w-fit"
-          src="https://res.cloudinary.com/augalo/image/upload/v1699275034/Aucode/mockup-landing_ky5psm.png"
-          alt=""
+          class="max-w-full md:max-w-[500px]"
+          src="https://res.cloudinary.com/augalo/image/upload/v1699567485/Aucode/solo_1_kvfkki.png"
+          alt="Mockup d'un smartphone avec l'application Aucode"
         />
 
         <Parallax :factor="0.05">
@@ -173,7 +173,7 @@ const screenshots = [
             <img
               class="w-[2.3rem] md:w-[3.3rem]"
               src="https://res.cloudinary.com/augalo/image/upload/v1689610705/Aucode/duck_yosxyk.png"
-              alt=""
+              alt="Illustration du canard Aucode"
             />
             <span class="uppercase">c’est gratuit !</span>
           </div>
@@ -410,7 +410,7 @@ const screenshots = [
         <img
           class="w-14 md:w-24"
           src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
-          alt=""
+          alt="Icone du canard Aucode"
         />
         <h4
           class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
@@ -475,13 +475,13 @@ const screenshots = [
               {{ price.title }}
             </span>
             <span
-              class="text-[3.5rem] md:text-8xl mt-8 tracking-tighter text-bg-linear-2"
+              class="text-[3.5rem] leading-[3.5rem] md:text-8xl mt-5 md:mt-8 tracking-tighter text-bg-linear-2"
             >
               {{ price.number }}
             </span>
 
             <ul
-              class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-8"
+              class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-5 md:mt-8"
             >
               <li v-for="feature in price.features" :key="feature">
                 {{ feature }}
@@ -513,7 +513,7 @@ const screenshots = [
                 <Buttons class="flex justify-center w-full" />
               </div>
               <h5
-                class="font-bold text-[2.8rem] sm:text-xl md:text-7xl text-center tracking-tighter"
+                class="font-bold text-[2.8rem] leading-[2.8rem] sm:text-xl md:text-7xl text-center tracking-tighter"
               >
                 Qui est derrière <span class="text-green-light">Aucode</span> ?
               </h5>
