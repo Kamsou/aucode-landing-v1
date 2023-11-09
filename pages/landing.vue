@@ -134,7 +134,7 @@ const screenshots = [
     >
       <div class="w-full md:max-w-[50%]">
         <h1
-          class="text-[11vw] md:text-[3.1rem] lg:text-[4.625rem] w-full md:w-[380px] lg:w-[583px] tracking-tighter font-bold text-green-dark leading-[11vw] md:leading-[2.8rem] lg:leading-[4.255rem] z-10 relative"
+          class="text-[11vw] md:text-[3.1rem] lg:text-[4.625rem] w-full md:w-[380px] lg:w-[583px] tracking-[0.15rem] font-bold text-green-dark leading-[11vw] md:leading-[2.8rem] lg:leading-[4.255rem] z-10 relative"
         >
           Teste tes acquis de
           <span class="underline"> développeuse </span> avant de postuler
