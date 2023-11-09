@@ -527,8 +527,8 @@ const screenshots = [
                   <div>
                     <img
                       class="max-w-full md:max-w-[400px] mx-auto md:mx-0"
-                      src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
-                      alt="Portrait de Camille, la fondatrice de Aucode"
+                      src="https://res.cloudinary.com/augalo/image/upload/v1699568003/Aucode/profile_bwlprr.png"
+                      alt="Portrait de Camille, fondatrice de Aucode"
                     />
 
                     <div
