@@ -474,7 +474,9 @@ const screenshots = [
             <span class="text-4xl md:text-5xl tracking-tighter">
               {{ price.title }}
             </span>
-            <span class="text-[3.5rem] md:text-8xl mt-8">
+            <span
+              class="text-[3.5rem] md:text-8xl mt-8 tracking-tighter text-bg-linear-2"
+            >
               {{ price.number }}
             </span>
 
@@ -491,7 +493,7 @@ const screenshots = [
 
       <div ref="about" class="relative text-white w-full">
         <div class="md:max-w-[1440px] md:mx-auto relative">
-          <div class="w-full absolute -top-[12rem] left-0 z-0 overflow-hidden">
+          <div class="w-full absolute -top-[14rem] left-0 z-0 overflow-hidden">
             <BgEllipse
               class="relative left-1/2 transform -translate-x-[50%] mx-auto"
             />
