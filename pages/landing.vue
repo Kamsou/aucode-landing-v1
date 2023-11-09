@@ -569,11 +569,7 @@ const screenshots = [
                   <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     Cependant, un besoin croissant de façonner quelque chose de
                     véritablement personnel m'a conduit à prendre l'initiative
-                    il y a deux ans en lançant mes propres projets. J'ai
-                    toujours cru en la force de la collaboration et de l'esprit
-                    d'équipe, mais j'ai également réalisé que la confiance en
-                    soi est fondamentale pour toutes développeuses,
-                    indépendamment de son expérience.
+                    il y a deux ans en lançant mes propres projets.
                   </p>
                   <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     J'ai toujours cru en la force de la collaboration et de
