@@ -14,19 +14,6 @@ import IconHuman from "@/assets/icons/IconHuman.vue";
 import IconEye from "@/assets/icons/IconEye.vue";
 import BgEllipse from "@/assets/icons/BgEllipse.vue";
 
-const stores = [
-  {
-    name: "l'App Store",
-    icon: IconAppleStore,
-    url: "https://apps.apple.com/fr/app/aucode/id6463032739",
-  },
-  {
-    name: "Google Play",
-    icon: IconGooglePlay,
-    url: "https://play.google.com/store/apps/details?id=com.aucode.tech&hl=fr",
-  },
-];
-
 const cards = [
   {
     icon: IconGooglePlay,
@@ -139,24 +126,7 @@ const prices = [
         </h1>
         <p class="my-7">Inscris-toi gratuitement maintenant !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
-          <NuxtLink
-            v-for="(store, index) in stores"
-            :key="index"
-            :to="store.url"
-            target="_blank"
-          >
-            <button
-              class="bg-white w-full md:w-[11rem] lg:w-[13rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
-            >
-              <component :is="store.icon" class="w-5" />
-              <div>
-                <span class="text-[0.68rem] block leading-3">
-                  Télécharger sur
-                </span>
-                <span class="block leading-5">{{ store.name }}</span>
-              </div>
-            </button>
-          </NuxtLink>
+          <Buttons />
         </div>
       </div>
 
@@ -322,18 +292,16 @@ const prices = [
 
           <div ref="syndrom" class="md:mt-60">
             <div class="mx-6 md:mx-0">
-              <span class="text-gray-light text-2xl md:text-[2.8125rem]">
-                En finir avec
-              </span>
+              <span class="text-gray-light text-2xl pl-1"> En finir avec </span>
 
               <h3
-                class="mb-[4.5rem] md:mb-20 text-5xl md:text-7xl tracking-tighter"
+                class="mb-[4.5rem] md:mb-20 text-5xl md:text-7xl tracking-tighter md:leading-[3.5rem]"
               >
                 Le syndrome de <span class="text-green-light">l’imposteur</span>
               </h3>
             </div>
 
-            <div class="lg:hidden">
+            <div class="md:hidden">
               <Swiper
                 class="swiper-cards-wrapper w-full"
                 :modules="[SwiperEffectCoverflow, SwiperPagination]"
@@ -378,11 +346,11 @@ const prices = [
               </Swiper>
             </div>
 
-            <div class="hidden lg:flex w-full gap-4">
+            <div class="hidden md:flex md:flex-wrap w-full gap-4">
               <div
                 v-for="(category, index) in categories"
                 :key="index"
-                class="group flex flex-col rounded-3xl border border-green-light justify-between w-[25%] relative hover:bg-green-light transition-all duration-500"
+                class="group flex flex-col rounded-3xl border border-green-light justify-between md:w-[48%] lg:w-[23%] relative hover:bg-green-light transition-all duration-500"
               >
                 <component
                   :is="category.icon"
@@ -391,7 +359,7 @@ const prices = [
 
                 <div class="pt-44 px-7 pb-14">
                   <span
-                    class="text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
+                    class="md:text-[2rem] lg:text-[1.8vw] xl:text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
                   >
                     {{ category.title }}
                   </span>
@@ -407,24 +375,7 @@ const prices = [
             <div
               class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-14 md:mt-20 pb-56 md:pb-96 mx-6 md:mx-0"
             >
-              <NuxtLink
-                v-for="store in stores"
-                :key="store.name"
-                :to="store.url"
-                target="_blank"
-              >
-                <button
-                  class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
-                >
-                  <component :is="store.icon" class="w-5" />
-                  <div>
-                    <span class="text-[0.68rem] block leading-3">
-                      Télécharger sur
-                    </span>
-                    <span class="block leading-5">{{ store.name }}</span>
-                  </div>
-                </button>
-              </NuxtLink>
+              <Buttons />
             </div>
           </div>
         </div>
@@ -504,92 +455,78 @@ const prices = [
           />
         </div>
         <div
-          class="px-6 md:px-24 z-10 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
+          class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
         >
           <div
             class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
           />
-          <h5
-            class="font-bold text-5xl md:text-7xl text-center tracking-tighter pt-60"
-          >
-            Qui est derrière <span class="text-green-light">Aucode</span> ?
-          </h5>
+          <div class="relative z-10">
+            <h5
+              class="font-bold text-5xl md:text-7xl text-center tracking-tighter pt-60"
+            >
+              Qui est derrière <span class="text-green-light">Aucode</span> ?
+            </h5>
 
-          <div
-            class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
-          >
-            <div class="flex flex-col justify-center w-full lg:w-1/2">
-              <img
-                class="max-w-full md:max-w-[400px] mx-auto"
-                src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
-                alt="Portrait de Camille, la fondatrice de Aucode"
-              />
-
-              <div
-                class="flex justify-center lg:justify-normal gap-6 mt-11 md:mt-6"
-              >
-                <component
-                  :is="IconLinkedin"
-                  class="w-8 h-8 text-green-light"
+            <div
+              class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
+            >
+              <div class="flex flex-col justify-center w-full lg:w-1/2">
+                <img
+                  class="max-w-full md:max-w-[400px] mx-auto"
+                  src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
+                  alt="Portrait de Camille, la fondatrice de Aucode"
                 />
-                <component :is="IconX" class="w-8 h-8 text-green-light" />
+
+                <div
+                  class="flex justify-center lg:justify-normal gap-6 mt-11 md:mt-6"
+                >
+                  <component
+                    :is="IconLinkedin"
+                    class="w-8 h-8 text-green-light"
+                  />
+                  <component :is="IconX" class="w-8 h-8 text-green-light" />
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 text-sm md:text-xl px-6 md:px-0">
+                <p class="mb-8 leading-7 opacity-70">
+                  Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
+                  travaillé étroitement avec des agences et startups innovantes,
+                  laissant ma marque à chaque étape.
+                </p>
+                <p class="mb-8 leading-7 opacity-70">
+                  Cependant, un besoin croissant de façonner quelque chose de
+                  véritablement personnel m'a conduit à prendre l'initiative il
+                  y a deux ans en lançant mes propres projets. J'ai toujours cru
+                  en la force de la collaboration et de l'esprit d'équipe, mais
+                  j'ai également réalisé que la confiance en soi est
+                  fondamentale pour toutes développeuses, indépendamment de son
+                  expérience.
+                </p>
+                <p class="mb-8 leading-7 opacity-70">
+                  C'est avec cette idée en tête que "Aucode" a vu le jour : un
+                  projet pour aider les développeuses à valoriser leur unique
+                  contribution au monde de la technologie.
+                </p>
               </div>
             </div>
 
-            <div class="w-full md:w-1/2 text-sm md:text-xl px-6 md:px-0">
-              <p class="mb-8 leading-7 opacity-70">
-                Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
-                travaillé étroitement avec des agences et startups innovantes,
-                laissant ma marque à chaque étape.
-              </p>
-              <p class="mb-8 leading-7 opacity-70">
-                Cependant, un besoin croissant de façonner quelque chose de
-                véritablement personnel m'a conduit à prendre l'initiative il y
-                a deux ans en lançant mes propres projets. J'ai toujours cru en
-                la force de la collaboration et de l'esprit d'équipe, mais j'ai
-                également réalisé que la confiance en soi est fondamentale pour
-                toutes développeuses, indépendamment de son expérience.
-              </p>
-              <p class="mb-8 leading-7 opacity-70">
-                C'est avec cette idée en tête que "Aucode" a vu le jour : un
+            <div class="mt-16 px-6 md:px-0 md:mt-28 text-center">
+              <p
+                class="text-lg md:text-[1.75rem] md:leading-10 w-full md:w-[90%] mx-auto"
+              >
+                C'est avec cette idée en tête que
+                <span class="text-green-light">"Aucode"</span> a vu le jour : un
                 projet pour aider les développeuses à valoriser leur unique
                 contribution au monde de la technologie.
               </p>
             </div>
-          </div>
 
-          <div class="mt-16 px-6 md:px-0 md:mt-28">
-            <p
-              class="text-lg md:text-[1.75rem] md:leading-10 w-full md:w-[90%] mx-auto"
+            <div
+              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-16 md:mt-20 pb-28"
             >
-              C'est avec cette idée en tête que
-              <span class="text-green-light">"Aucode"</span> a vu le jour : un
-              projet pour aider les développeuses à valoriser leur unique
-              contribution au monde de la technologie.
-            </p>
-          </div>
-
-          <div
-            class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-16 md:mt-20 pb-28"
-          >
-            <NuxtLink
-              v-for="store in stores"
-              :key="store.name"
-              :to="store.url"
-              target="_blank"
-            >
-              <button
-                class="bg-white w-full md:max-w-[15.43rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button"
-              >
-                <component :is="store.icon" class="w-5" />
-                <div>
-                  <span class="text-[0.68rem] block leading-3">
-                    Télécharger sur
-                  </span>
-                  <span class="block leading-5">{{ store.name }}</span>
-                </div>
-              </button>
-            </NuxtLink>
+              <Buttons />
+            </div>
           </div>
         </div>
 
