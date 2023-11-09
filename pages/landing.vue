@@ -148,31 +148,36 @@ const screenshots = [
       <div
         class="relative max-w-full md:max-w-[400px] lg:max-w-[480px] mt-12 md:mt-0"
       >
-        <div
-          class="bg-green-light rounded-xl absolute top-0 left-4 md:left-24 py-1 text-xs font-bold flex justify-center items-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
-        >
-          <img
-            class="w-[2.5rem] md:w-[3.3rem]"
-            src="https://res.cloudinary.com/augalo/image/upload/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
-            alt=""
-          />
-          <span class="uppercase">Rejoins-nous !</span>
-        </div>
+        <Parallax :factor="0.05">
+          <div
+            class="bg-green-light rounded-xl absolute top-0 left-4 md:left-24 py-1 text-xs font-bold flex justify-center items-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
+          >
+            <img
+              class="w-[2.5rem] md:w-[3.3rem]"
+              src="https://res.cloudinary.com/augalo/image/upload/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
+              alt=""
+            />
+            <span class="uppercase">Rejoins-nous !</span>
+          </div>
+        </Parallax>
         <img
           class="max-w-full md:max-w-fit"
           src="https://res.cloudinary.com/augalo/image/upload/v1699275034/Aucode/mockup-landing_ky5psm.png"
           alt=""
         />
-        <div
-          class="bg-green-light rounded-xl absolute bottom-5 md:bottom-12 right-5 md:right-12 lg:right-20 text-xs font-bold flex items-center justify-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
-        >
-          <img
-            class="w-[2.3rem] md:w-[3.3rem]"
-            src="https://res.cloudinary.com/augalo/image/upload/v1689610705/Aucode/duck_yosxyk.png"
-            alt=""
-          />
-          <span class="uppercase">c’est gratuit !</span>
-        </div>
+
+        <Parallax :factor="0.05">
+          <div
+            class="bg-green-light rounded-xl absolute bottom-5 md:bottom-12 right-5 md:right-12 lg:right-20 text-xs font-bold flex items-center justify-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
+          >
+            <img
+              class="w-[2.3rem] md:w-[3.3rem]"
+              src="https://res.cloudinary.com/augalo/image/upload/v1689610705/Aucode/duck_yosxyk.png"
+              alt=""
+            />
+            <span class="uppercase">c’est gratuit !</span>
+          </div>
+        </Parallax>
       </div>
     </div>
 
@@ -237,8 +242,6 @@ const screenshots = [
                     </div>
                   </div>
                 </SwiperSlide>
-
-                <SwiperPagination class="swiper-pagination" />
               </Swiper>
             </div>
             <div class="w-full hidden md:flex gap-5 transform -translate-y-20">
