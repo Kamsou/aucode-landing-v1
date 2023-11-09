@@ -12,6 +12,7 @@ import IconLinkedin from "@/assets/icons/IconLinkedin.vue";
 import IconX from "@/assets/icons/IconX.vue";
 import IconHuman from "@/assets/icons/IconHuman.vue";
 import IconEye from "@/assets/icons/IconEye.vue";
+import BgEllipse from "@/assets/icons/BgEllipse.vue";
 
 const stores = [
   {
@@ -463,7 +464,7 @@ const prices = [
         </div>
       </div>
 
-      <div ref="pricing" class="text-green-dark -mt-10">
+      <div ref="pricing" class="text-green-dark -mt-10 z-10 relative">
         <h4
           class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20"
         >
@@ -496,10 +497,20 @@ const prices = [
         </div>
       </div>
 
-      <div ref="about" class="mt-28 bg-bg-linear-1 text-white">
-        <div class="px-6 md:px-24">
+      <div ref="about" class="relative text-white">
+        <div class="w-full absolute -top-[13.9rem] left-0 z-0 overflow-hidden">
+          <BgEllipse
+            class="relative left-1/2 transform -translate-x-[50%] mx-auto"
+          />
+        </div>
+        <div
+          class="px-6 md:px-24 z-10 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
+        >
+          <div
+            class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
+          />
           <h5
-            class="font-bold text-5xl md:text-7xl text-center tracking-tighter"
+            class="font-bold text-5xl md:text-7xl text-center tracking-tighter pt-60"
           >
             Qui est derrière <span class="text-green-light">Aucode</span> ?
           </h5>
@@ -582,7 +593,7 @@ const prices = [
           </div>
         </div>
 
-        <Footer />
+        <Footer class="relative z-10" />
       </div>
     </div>
   </section>
