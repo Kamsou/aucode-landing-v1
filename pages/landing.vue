@@ -381,7 +381,7 @@ const screenshots = [
 
                 <div class="pt-44 px-7 pb-14">
                   <span
-                    class="md:text-[2rem] lg:text-[1.8vw] xl:text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
+                    class="md:text-[2rem] lg:text-[2vw] xl:text-[1.9rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
                   >
                     {{ category.title }}
                   </span>
@@ -534,11 +534,26 @@ const screenshots = [
                     <div
                       class="flex justify-center items-center lg:justify-normal gap-6 mt-11 md:mt-6"
                     >
-                      <component
-                        :is="IconLinkedin"
-                        class="w-8 h-8 text-green-light"
-                      />
-                      <component :is="IconX" class="w-8 h-8 text-green-light" />
+                      <NuxtLink
+                        to="https://www.linkedin.com/in/camille-coutens-9a0960a5/"
+                        target="_blank"
+                        class="cursor-pointer"
+                      >
+                        <component
+                          :is="IconLinkedin"
+                          class="w-8 h-8 text-green-light"
+                        />
+                      </NuxtLink>
+                      <NuxtLink
+                        to="https://twitter.com/camillecoutens"
+                        target="_blank"
+                        class="cursor-pointer"
+                      >
+                        <component
+                          :is="IconX"
+                          class="w-8 h-8 text-green-light"
+                        />
+                      </NuxtLink>
                     </div>
                   </div>
                 </div>
