@@ -343,23 +343,23 @@ const screenshots = [
                 <SwiperSlide
                   v-for="(category, index) in categories"
                   :key="index"
-                  class="swiper-cards md:hidden group flex flex-col rounded-3xl border border-green-light justify-between w-[25%] relative hover:bg-green-light transition-all duration-500"
+                  class="swiper-cards md:hidden group flex flex-col rounded-3xl border border-green-light justify-between w-[25%] relative hover:bg-green-light transition-all duration-1000"
                 >
                   <component
                     :is="category.icon"
-                    class="text-green-light absolute top-6 right-6 group-hover:text-green-dark transition-all duration-500"
+                    class="text-green-light absolute top-6 right-6 group-hover:text-green-dark transition-all duration-1000"
                   />
 
                   <div
                     class="flex flex-col h-full justify-end md:block md:pt-44 px-6 md:px-7 pb-8 md:pb-14"
                   >
                     <span
-                      class="text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-500"
+                      class="text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-1000"
                     >
                       {{ category.title }}
                     </span>
                     <p
-                      class="text-gray-light text-sm group-hover:text-green-dark transition-all duration-500"
+                      class="text-gray-light text-sm group-hover:text-green-dark transition-all duration-1000"
                     >
                       {{ category.description }}
                     </p>
