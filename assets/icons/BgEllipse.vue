@@ -16,8 +16,12 @@
         y2="1589.15"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="38%" stop-color="#2F2534" />
-        <stop offset="20%" stop-color="#261845" />
+        <stop offset="0%" stop-color="#2E2334" />
+        <stop offset="20%" stop-color="#2E2334" />
+        <stop offset="50%" stop-color="#271B43" />
+        <stop offset="70%" stop-color="#271B43" />
+        <stop offset="100%" stop-color="#271B43" />
+        <!-- Fin du dégradé -->
       </linearGradient>
     </defs>
   </svg>

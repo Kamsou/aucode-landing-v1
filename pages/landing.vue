@@ -105,17 +105,32 @@ const prices = [
     features: ["+30 Quiz", "Corrections", "Resultats"],
   },
 ];
+
+const screenshots = [
+  {
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-2_hldv3l.png",
+    alt: "Screenshot exemple d'une question d'un quiz",
+  },
+  {
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-1_dbyffc.png",
+    alt: "Screenshot exemple d'une question d'un quiz",
+  },
+  {
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-3_hdre8r.png",
+    alt: "Screenshot exemple d'une question d'un quiz",
+  },
+];
 </script>
 
 <template>
-  <section
-    class="w-full md:max-w-[1440px] mx-auto font-regular tracking-tighter"
-  >
-    <Header class="pt-6 md:pt-10 mx-6 md:mx-24" />
+  <section class="mx-auto font-regular tracking-tighter">
+    <div class="w-full md:max-w-[1440px] md:mx-auto">
+      <Header class="pt-6 md:pt-10 mx-6 md:mx-24" />
+    </div>
 
     <div
       ref="hero"
-      class="md:flex py-20 md:py-28 px-6 md:px-24 md:overflow-x-hidden"
+      class="md:flex py-20 md:py-28 px-6 md:px-24 md:overflow-x-hidden w-full md:max-w-[1440px] md:mx-auto"
     >
       <div class="w-full md:max-w-[50%]">
         <h1
@@ -168,7 +183,9 @@ const prices = [
         <div
           class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
         />
-        <div class="md:px-24 rounded-t-[2.5rem] relative h-full">
+        <div
+          class="md:px-24 rounded-t-[2.5rem] relative h-full w-full md:max-w-[1440px] md:mx-auto"
+        >
           <div ref="reviews">
             <div class="md:hidden transform -translate-y-20">
               <Swiper
@@ -209,10 +226,12 @@ const prices = [
                     </div>
 
                     <div class="flex items-center justify-between">
-                      <p class="text-green-light uppercase text-xs">
+                      <p
+                        class="text-green-light uppercase text-xs tracking-wide"
+                      >
                         {{ card.user }}
                       </p>
-                      <p class="text-gray-light text-[0.625rem]">
+                      <p class="text-gray-light text-[0.625rem] tracking-wide">
                         {{ card.date }}
                       </p>
                     </div>
@@ -238,7 +257,7 @@ const prices = [
                 </div>
 
                 <div class="flex flex-col justify-between">
-                  <div class="py-11 h-[200px]">
+                  <div class="py-11 h-[200px] sm:h-[225px] lg:h-[200px]">
                     <p class="text-green-dark text-sm">
                       {{ card.review }}
                     </p>
@@ -259,10 +278,10 @@ const prices = [
 
           <div
             ref="topics"
-            class="mt-8 md:mt-28 mb-12 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
+            class="md:mt-28 mb-32 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
           >
             <h2
-              class="mb-12 md:mb-20 text-[3.25rem] md:text-7xl tracking-tighter"
+              class="mb-12 md:mb-20 text-[3.25rem] leading-[3.25rem] md:leading-normal md:text-7xl tracking-tighter"
             >
               <span class="text-green-light">4</span> thématiques
             </h2>
@@ -274,14 +293,14 @@ const prices = [
             >
               <div class="flex gap-8 w-full md:w-[39%]">
                 <span
-                  class="bg-green-light rounded-full text-green-dark py-[0.4rem] md:py-2 px-[0.94rem] text-xl h-full"
+                  class="bg-green-light rounded-full text-green-dark py-[0.4rem] md:py-2 px-[0.94rem] text-base md:text-xl h-full"
                 >
                   {{ index + 1 }}
                 </span>
                 <span class="text-[1.625rem]">{{ topic.name }}</span>
               </div>
 
-              <p class="text-sm w-[35%] hidden md:block">
+              <p class="text-sm w-[35%] md:w-[45%] lg:w-[35%] hidden md:block">
                 {{ topic.description }}
               </p>
               <div class="flex justify-end w-[20%] md:w-[18%]">
@@ -391,27 +410,46 @@ const prices = [
           alt=""
         />
         <h4
-          class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-20 text-center"
+          class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
         >
           <span class="text-green-light">16</span> Quiz gratuits
         </h4>
 
-        <div class="flex">
+        <div class="hidden md:flex justify-center">
           <img
-            class="w-[33%]"
-            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
-            alt=""
+            v-for="screenshot in screenshots"
+            :key="screenshot.url"
+            class="w-[30%]"
+            :src="screenshot.url"
+            :alt="screenshot.alt"
           />
-          <img
-            class="w-[33%]"
-            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
-            alt=""
-          />
-          <img
-            class="w-[33%]"
-            src="https://res.cloudinary.com/augalo/image/upload/v1699292055/Aucode/quiz1_psky8i.png"
-            alt=""
-          />
+        </div>
+
+        <div class="md:hidden w-full">
+          <Swiper
+            class="w-full swiper-screenshots-wrapper"
+            :modules="[SwiperEffectCoverflow, SwiperPagination]"
+            :slides-per-view="'auto'"
+            :grabCursor="true"
+            :space-between="24"
+            :centeredSlides="true"
+            :pagination="{ clickable: false }"
+            :coverflow-effect="{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2,
+              slideShadows: true,
+            }"
+          >
+            <SwiperSlide
+              class="bg-white rounded-2xl w-[15rem] flex flex-col justify-between"
+              v-for="screenshot in screenshots"
+              :key="screenshot.url"
+            >
+              <img :src="screenshot.url" :alt="screenshot.alt" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 
@@ -433,12 +471,12 @@ const prices = [
             <span class="text-4xl md:text-5xl tracking-tighter">
               {{ price.title }}
             </span>
-            <span class="text-[3.5rem] md:text-8xl mt-8">{{
-              price.number
-            }}</span>
+            <span class="text-[3.5rem] md:text-8xl mt-8">
+              {{ price.number }}
+            </span>
 
             <ul
-              class="text-xl text-center md:text-2xl text-gray-light leading-8 mt-8"
+              class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-8"
             >
               <li v-for="feature in price.features" :key="feature">
                 {{ feature }}
@@ -448,84 +486,98 @@ const prices = [
         </div>
       </div>
 
-      <div ref="about" class="relative text-white">
-        <div class="w-full absolute -top-[13.9rem] left-0 z-0 overflow-hidden">
-          <BgEllipse
-            class="relative left-1/2 transform -translate-x-[50%] mx-auto"
-          />
+      <div ref="about" class="relative text-white w-full">
+        <div class="md:max-w-[1440px] md:mx-auto relative">
+          <div class="w-full absolute -top-[12rem] left-0 z-0 overflow-hidden">
+            <BgEllipse
+              class="relative left-1/2 transform -translate-x-[50%] mx-auto"
+            />
+          </div>
         </div>
-        <div
-          class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
-        >
+        <div class="md:max-w-[1440px] md:mx-auto">
           <div
-            class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
-          />
-          <div class="relative z-10">
-            <h5
-              class="font-bold text-5xl md:text-7xl text-center tracking-tighter pt-60"
-            >
-              Qui est derrière <span class="text-green-light">Aucode</span> ?
-            </h5>
-
+            class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
+          >
             <div
-              class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
-            >
-              <div class="flex flex-col justify-center w-full lg:w-1/2">
-                <img
-                  class="max-w-full md:max-w-[400px] mx-auto"
-                  src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
-                  alt="Portrait de Camille, la fondatrice de Aucode"
-                />
+              class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
+            />
+            <div class="relative z-10">
+              <div
+                class="flex flex-col md:flex-row gap-6 text-green-dark justify-center pt-14 md:pt-20 pb-36"
+              >
+                <Buttons class="flex justify-center w-full" />
+              </div>
+              <h5
+                class="font-bold text-5xl sm:text-xl md:text-7xl text-center tracking-tighter"
+              >
+                Qui est derrière <span class="text-green-light">Aucode</span> ?
+              </h5>
 
+              <div
+                class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
+              >
                 <div
-                  class="flex justify-center lg:justify-normal gap-6 mt-11 md:mt-6"
+                  class="flex flex-col justify-center items-center w-full lg:w-1/2"
                 >
-                  <component
-                    :is="IconLinkedin"
-                    class="w-8 h-8 text-green-light"
-                  />
-                  <component :is="IconX" class="w-8 h-8 text-green-light" />
+                  <div>
+                    <img
+                      class="max-w-full md:max-w-[400px] mx-auto md:mx-0"
+                      src="https://res.cloudinary.com/augalo/image/upload/v1699292991/Aucode/about_zdp6tn.png"
+                      alt="Portrait de Camille, la fondatrice de Aucode"
+                    />
+
+                    <div
+                      class="flex justify-center items-center lg:justify-normal gap-6 mt-11 md:mt-6"
+                    >
+                      <component
+                        :is="IconLinkedin"
+                        class="w-8 h-8 text-green-light"
+                      />
+                      <component :is="IconX" class="w-8 h-8 text-green-light" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 text-sm md:text-xl px-6 md:px-0">
+                  <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
+                    Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
+                    travaillé étroitement avec des agences et startups
+                    innovantes, laissant ma marque à chaque étape.
+                  </p>
+                  <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
+                    Cependant, un besoin croissant de façonner quelque chose de
+                    véritablement personnel m'a conduit à prendre l'initiative
+                    il y a deux ans en lançant mes propres projets. J'ai
+                    toujours cru en la force de la collaboration et de l'esprit
+                    d'équipe, mais j'ai également réalisé que la confiance en
+                    soi est fondamentale pour toutes développeuses,
+                    indépendamment de son expérience.
+                  </p>
+                  <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
+                    J'ai toujours cru en la force de la collaboration et de
+                    l'esprit d'équipe, mais j'ai également réalisé que la
+                    confiance en soi est fondamentale pour toutes développeuses,
+                    indépendamment de son expérience.
+                  </p>
                 </div>
               </div>
 
-              <div class="w-full md:w-1/2 text-sm md:text-xl px-6 md:px-0">
-                <p class="mb-8 leading-7 opacity-70">
-                  Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
-                  travaillé étroitement avec des agences et startups innovantes,
-                  laissant ma marque à chaque étape.
-                </p>
-                <p class="mb-8 leading-7 opacity-70">
-                  Cependant, un besoin croissant de façonner quelque chose de
-                  véritablement personnel m'a conduit à prendre l'initiative il
-                  y a deux ans en lançant mes propres projets. J'ai toujours cru
-                  en la force de la collaboration et de l'esprit d'équipe, mais
-                  j'ai également réalisé que la confiance en soi est
-                  fondamentale pour toutes développeuses, indépendamment de son
-                  expérience.
-                </p>
-                <p class="mb-8 leading-7 opacity-70">
-                  C'est avec cette idée en tête que "Aucode" a vu le jour : un
-                  projet pour aider les développeuses à valoriser leur unique
+              <div class="mt-16 px-6 md:px-0 md:mt-28 md:text-center">
+                <p
+                  class="text-lg md:text-[1.75rem] md:leading-10 w-full md:w-[90%] mx-auto"
+                >
+                  C'est avec cette idée en tête que
+                  <span class="text-green-light">"Aucode"</span> a vu le jour :
+                  un projet pour aider les développeuses à valoriser leur unique
                   contribution au monde de la technologie.
                 </p>
               </div>
-            </div>
 
-            <div class="mt-16 px-6 md:px-0 md:mt-28 text-center">
-              <p
-                class="text-lg md:text-[1.75rem] md:leading-10 w-full md:w-[90%] mx-auto"
+              <div
+                class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-16 md:mt-20 pb-28"
               >
-                C'est avec cette idée en tête que
-                <span class="text-green-light">"Aucode"</span> a vu le jour : un
-                projet pour aider les développeuses à valoriser leur unique
-                contribution au monde de la technologie.
-              </p>
-            </div>
-
-            <div
-              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-16 md:mt-20 pb-28"
-            >
-              <Buttons />
+                <Buttons />
+              </div>
             </div>
           </div>
         </div>
@@ -579,5 +631,25 @@ const prices = [
 .swiper-reviews-wrapper .swiper-slide {
   width: 240px;
   height: 264px;
+}
+
+.swiper-screenshots-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-screenshots-wrapper .swiper-pagination {
+  margin-top: 0;
+}
+
+.swiper-screenshots-wrapper .swiper-pagination .swiper-pagination-bullet {
+  background-color: #b6b6b6;
+
+  &-active {
+    background: #bff92b;
+    width: 1.69rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
 }
 </style>
