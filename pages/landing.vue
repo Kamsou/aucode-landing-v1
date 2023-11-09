@@ -108,15 +108,15 @@ const prices = [
 
 const screenshots = [
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-2_hldv3l.png",
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-1_akja37.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-1_dbyffc.png",
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-2_ff9jlf.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699555844/Aucode/mockup-quiz-3_hdre8r.png",
+    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-3_tzqtqv.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
 ];
