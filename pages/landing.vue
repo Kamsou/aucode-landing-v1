@@ -232,7 +232,7 @@ const screenshots = [
 
                     <div class="flex items-center justify-between">
                       <p
-                        class="text-green-light uppercase text-xs tracking-wide"
+                        class="text-green-light uppercase text-xs tracking-wide font-bold"
                       >
                         {{ card.user }}
                       </p>
@@ -267,7 +267,7 @@ const screenshots = [
                   </div>
 
                   <div class="flex items-center justify-between">
-                    <p class="text-green-light uppercase text-xs">
+                    <p class="text-green-light uppercase text-xs font-bold">
                       {{ card.user }}
                     </p>
                     <p class="text-gray-light text-[0.625rem]">
