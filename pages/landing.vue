@@ -270,7 +270,7 @@ const screenshots = [
                     <p class="text-green-light uppercase text-xs font-bold">
                       {{ card.user }}
                     </p>
-                    <p class="text-gray-light text-[0.625rem]">
+                    <p class="text-gray-light text-[0.625rem] tracking-wide">
                       {{ card.date }}
                     </p>
                   </div>
