@@ -562,14 +562,17 @@ const screenshots = [
 
                 <div class="w-full lg:w-1/2 text-sm md:text-xl px-6 md:px-0">
                   <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
-                    Il y a 6 ans, quand j'ai débuté dans le monde du dev, j'ai
-                    travaillé étroitement avec des agences et startups
-                    innovantes, laissant ma marque à chaque étape.
+                    Quand j'ai débuté dans le monde du dev, j'ai grandement
+                    appris et travaillé auprès d'agences et de startups
+                    innovantes en France. J'y ai rencontré de formidables
+                    personnes qui m'ont appris et soutenu.
                   </p>
                   <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
-                    Cependant, un besoin croissant de façonner quelque chose de
-                    véritablement personnel m'a conduit à prendre l'initiative
-                    il y a deux ans en lançant mes propres projets.
+                    Par la suite, j'ai voulu façonner quelque chose de
+                    véritablement personnel en lançant mes propres projets.
+                    C'est pour ça que j'ai lancé Augalo, une application pour
+                    les cavalieres. Et aujourd'hui pour Aucode, une application
+                    pour les développeuses.
                   </p>
                   <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     J'ai toujours cru en la force de la collaboration et de
