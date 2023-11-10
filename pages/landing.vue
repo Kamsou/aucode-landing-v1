@@ -589,8 +589,9 @@ const screenshots = [
                 >
                   C'est avec cette idée en tête que
                   <span class="text-green-light">"Aucode"</span> a vu le jour :
-                  un projet pour aider les développeuses à valoriser leur unique
-                  contribution au monde de la technologie.
+                  un projet pour aider les développeuses à prendre confiance en
+                  elles. Ainsi qu'à valoriser leur contribution dans le monde de
+                  la tech.
                 </p>
               </div>
 
