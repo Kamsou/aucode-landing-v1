@@ -137,7 +137,7 @@ const screenshots = [
           class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[420px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
         >
           Teste tes acquis de
-          <span class="underline"> développeuse </span> avant de postuler
+          <span class="text-[#b5e04a]"> développeuse </span> avant de postuler
         </h1>
         <p class="my-7">Inscris-toi gratuitement maintenant !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
