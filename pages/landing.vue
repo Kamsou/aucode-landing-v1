@@ -18,7 +18,7 @@ const cards = [
   {
     icon: IconGooglePlay,
     review:
-      "Très pratique pour se mettre au défi vite fait avant un entretien! Merci",
+      "Très pratique pour se mettre au défi vite fait avant un entretien ! Merci",
     user: "Laurent L",
     date: "11/10/2023",
   },
@@ -130,9 +130,9 @@ const screenshots = [
 
     <div
       ref="hero"
-      class="md:flex py-20 md:py-28 px-6 md:px-24 md:overflow-x-hidden w-full md:max-w-[1440px] md:mx-auto"
+      class="md:flex md:justify-between py-20 md:pt-16 md:pb-40 px-6 md:px-24 md:overflow-x-hidden w-full md:max-w-[1440px] md:mx-auto"
     >
-      <div class="w-full md:max-w-[50%]">
+      <div class="w-full md:max-w-[50%] relative z-10">
         <h1
           class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[420px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
         >
@@ -146,7 +146,7 @@ const screenshots = [
       </div>
 
       <div
-        class="relative max-w-full md:max-w-[400px] lg:max-w-[480px] mt-12 md:mt-0"
+        class="relative max-w-full md:max-w-[400px] lg:max-w-full mt-12 md:mt-0"
       >
         <Parallax :factor="0.05">
           <div
@@ -161,7 +161,7 @@ const screenshots = [
           </div>
         </Parallax>
         <img
-          class="max-w-full md:max-w-[500px]"
+          class="max-w-full md:max-w-[380px] lg:max-w-[500px]"
           src="https://res.cloudinary.com/augalo/image/upload/v1699567485/Aucode/solo_1_kvfkki.png"
           alt="Mockup d'un smartphone avec l'application Aucode"
         />
@@ -244,11 +244,12 @@ const screenshots = [
                 </SwiperSlide>
               </Swiper>
             </div>
+
             <div class="w-full hidden md:flex gap-5 transform -translate-y-20">
               <div
                 v-for="card in cards"
                 :key="card.user"
-                class="bg-white p-6 rounded-2xl w-[15rem] flex flex-col justify-between"
+                class="bg-white p-6 rounded-2xl w-[20rem] flex flex-col justify-between"
               >
                 <div class="flex items-center justify-between">
                   <div class="flex">
@@ -260,7 +261,7 @@ const screenshots = [
                 </div>
 
                 <div class="flex flex-col justify-between">
-                  <div class="py-11 h-[200px] sm:h-[225px] lg:h-[200px]">
+                  <div class="py-11 h-[200px] sm:h-[225px] lg:h-[180px]">
                     <p class="text-green-dark text-sm">
                       {{ card.review }}
                     </p>
@@ -281,7 +282,7 @@ const screenshots = [
 
           <div
             ref="topics"
-            class="md:mt-28 mb-32 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
+            class="md:mt-20 mb-32 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
           >
             <h2
               class="mb-12 md:mb-20 text-[3.25rem] leading-[3.25rem] md:leading-normal md:text-7xl tracking-tighter"

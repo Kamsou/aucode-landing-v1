@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-green-dark bg-white flex flex-col md:flex-row md:justify-between px-0 pt-9 md:py-9 rounded-t-[3rem] md:px-20 lg:px-24 md:flex uppercase md:normal-case"
+    class="text-green-dark bg-white flex flex-col md:flex-row md:justify-between px-0 pt-9 md:py-9 rounded-t-[3rem] md:px-10 lg:px-24 md:flex uppercase md:normal-case"
   >
     <div class="flex flex-col md:flex-row items-center text-center md:w-[30%]">
       <img
@@ -40,10 +40,10 @@
     </div>
 
     <div
-      class="flex flex-col md:flex-row items-center w-full text-center px-6 md:px-0 md:w-[50%] md:gap-8"
+      class="flex flex-col md:flex-row items-center w-full text-center px-6 md:px-0 md:w-[50%] lg:w-[60%] md:gap-8"
     >
       <div
-        class="flex flex-col md:flex-row items-center md:gap-9 w-full text-center"
+        class="flex flex-col md:flex-row items-center md:gap-4 lg:gap-9 w-full text-center"
       >
         <NuxtLink to="/legal" class="w-full md:w-auto">
           <div
