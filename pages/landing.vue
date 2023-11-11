@@ -130,7 +130,7 @@ const screenshots = [
 
     <div
       ref="hero"
-      class="md:flex md:justify-between py-20 md:pt-16 md:pb-40 px-6 md:px-24 md:overflow-x-hidden w-full md:max-w-[1440px] md:mx-auto"
+      class="md:flex md:justify-between pt-16 md:pt-20 pb-20 md:pb-40 px-6 md:px-24 md:overflow-x-hidden w-full md:max-w-[1440px] md:mx-auto"
     >
       <div class="w-full md:max-w-[50%] relative z-10">
         <h1
