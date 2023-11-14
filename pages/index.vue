@@ -636,7 +636,7 @@ const screenshots = [
 
 .swiper-cards-wrapper .swiper-slide {
   width: 18.7rem;
-  height: 23.8rem;
+  height: 18.8rem;
   background: transparent;
 
   &-active {
