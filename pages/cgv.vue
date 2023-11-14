@@ -21,7 +21,7 @@ useSeoMeta({
       Conditions Générales de Vente
     </h1>
 
-    <div class="w-full px-4 md:max-w-[800px] md:mx-auto mb-32">
+    <div class="w-full px-4 md:max-w-[800px] md:mx-auto pb-32">
       <h2 class="text-sm text-right mb-5">
         Dernière mise à jour : 29 août 2022
       </h2>
