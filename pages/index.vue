@@ -38,34 +38,6 @@ const cards = [
   },
 ];
 
-const topics = computed(() => {
-  return [
-    {
-      name: "Front-end",
-      description: `Le "front-end" fait référence à la partie visible d'une application ou d'un site web, celle avec laquelle l'utilisateur interagit directement.`,
-      icon: IconPencil,
-    },
-    {
-      name: "Back-end",
-      description: `Le "back-end" est tout ce qui se passe en coulisse pour faire fonctionner une application ou un site web. Cela comprend les serveurs,
-les bases de données, les applications, les API (interfaces de programmation d'applications) et toute autre infrastructure nécessaire.`,
-      icon: IconVector,
-    },
-    {
-      name: "Culture générale",
-      description: `La culture générale dans la tech est une compréhension de base des tendances, innovations et enjeux du monde technologique.
-Elle englobe la connaissance des principaux acteurs, des débats actuels et des impacts de la technologie sur la société.`,
-      icon: IconBook,
-    },
-    {
-      name: "Prospection",
-      description: `La prospection est l'acte de rechercher activement de nouveaux clients ou opportunités pour une entreprise ou un service, souvent
-à travers des démarches directes comme les appels, les emails ou les rencontres.`,
-      icon: IconMagnifier,
-    },
-  ];
-});
-
 const categories = [
   {
     icon: IconDialog,
@@ -97,12 +69,12 @@ const prices = [
   {
     title: "Starter",
     number: "0 €",
-    features: ["16 Quiz", "Corrections", "Resultats"],
+    features: ["16 Quiz", "Corrections", "Résultats"],
   },
   {
     title: "Premium",
     number: "9,99 €",
-    features: ["+30 Quiz", "Corrections", "Resultats"],
+    features: ["+30 Quiz", "Corrections", "Résultats"],
   },
 ];
 
@@ -120,6 +92,34 @@ const screenshots = [
     alt: "Screenshot exemple d'une question d'un quiz",
   },
 ];
+
+const topics = computed(() => {
+  return [
+    {
+      name: "Front-end",
+      description: `Le front-end fait référence à la partie visible d'une application ou d'un site web, celle avec laquelle l'utilisateur interagit directement.`,
+      icon: IconPencil,
+    },
+    {
+      name: "Back-end",
+      description: `Le back-end est tout ce qui se passe en coulisse pour faire fonctionner une application ou un site web. Cela comprend les serveurs,
+les bases de données, les applications, les API (interfaces de programmation d'applications) et toute autre infrastructure nécessaire.`,
+      icon: IconVector,
+    },
+    {
+      name: "Culture générale",
+      description: `La culture générale dans la tech est une compréhension de base des tendances, innovations et enjeux du monde technologique.
+Elle englobe la connaissance des principaux acteurs, des débats actuels et des impacts de la technologie sur la société.`,
+      icon: IconBook,
+    },
+    {
+      name: "Prospection",
+      description: `La prospection est l'acte de rechercher activement de nouveaux clients ou opportunités pour une entreprise ou un service, souvent
+à travers des démarches directes comme les appels, les emails ou les rencontres.`,
+      icon: IconMagnifier,
+    },
+  ];
+});
 </script>
 
 <template>
@@ -139,7 +139,7 @@ const screenshots = [
           Teste tes acquis de
           <span class="text-[#b5e04a]"> développeuse </span> avant de postuler
         </h1>
-        <p class="my-7">Inscris-toi gratuitement maintenant !</p>
+        <p class="my-7">Découvre les 16 Quiz dès maintenant gratuitement !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
           <Buttons />
         </div>
@@ -232,7 +232,7 @@ const screenshots = [
 
                     <div class="flex items-center justify-between">
                       <p
-                        class="text-green-light uppercase text-xs tracking-wide font-bold"
+                        class="text-[#b5e04a] uppercase text-xs tracking-wide font-bold"
                       >
                         {{ card.user }}
                       </p>
@@ -268,7 +268,7 @@ const screenshots = [
                   </div>
 
                   <div class="flex items-center justify-between">
-                    <p class="text-green-light uppercase text-xs font-bold">
+                    <p class="text-[#b5e04a] uppercase text-xs font-bold">
                       {{ card.user }}
                     </p>
                     <p class="text-gray-light text-[0.625rem] tracking-wide">
@@ -313,7 +313,60 @@ const screenshots = [
             </div>
           </div>
 
-          <div ref="syndrom" class="md:mt-60">
+          <div
+            ref="quiz"
+            class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 rounded-[2.5rem] md:max-w-[1440px] md:mx-auto md:mt-40"
+          >
+            <img
+              class="w-14 md:w-24"
+              src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
+              alt="Icone du canard Aucode"
+            />
+            <h4
+              class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
+            >
+              <span class="text-green-light">16</span> Quiz gratuits
+            </h4>
+
+            <div class="hidden md:flex justify-center">
+              <img
+                v-for="screenshot in screenshots"
+                :key="screenshot.url"
+                class="w-[30%]"
+                :src="screenshot.url"
+                :alt="screenshot.alt"
+              />
+            </div>
+
+            <div class="md:hidden w-full">
+              <Swiper
+                class="w-full swiper-screenshots-wrapper"
+                :modules="[SwiperEffectCoverflow, SwiperPagination]"
+                :slides-per-view="'auto'"
+                :grabCursor="true"
+                :space-between="24"
+                :centeredSlides="true"
+                :pagination="{ clickable: false }"
+                :coverflow-effect="{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 2,
+                  slideShadows: true,
+                }"
+              >
+                <SwiperSlide
+                  class="bg-white rounded-2xl w-[15rem] flex flex-col justify-between"
+                  v-for="screenshot in screenshots"
+                  :key="screenshot.url"
+                >
+                  <img :src="screenshot.url" :alt="screenshot.alt" />
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+
+          <div ref="syndrom" class="mt-32 md:mt-60">
             <div class="mx-6 md:mx-0">
               <span class="text-gray-light text-2xl pl-1"> En finir avec </span>
 
@@ -396,7 +449,7 @@ const screenshots = [
             </div>
 
             <div
-              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-14 md:mt-20 pb-56 md:pb-96 mx-6 md:mx-0"
+              class="flex flex-col md:flex-row gap-6 text-green-dark justify-center mt-14 md:mt-20 pb-32 md:pb-60 mx-6 md:mx-0"
             >
               <Buttons />
             </div>
@@ -404,112 +457,49 @@ const screenshots = [
         </div>
       </div>
 
-      <div class="md:mx-24">
+      <div class="relative text-white w-full">
         <div
-          ref="quiz"
-          class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 rounded-[2.5rem] transform -translate-y-28 md:-translate-y-40 md:max-w-[1440px] md:mx-auto"
+          class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
         >
-          <img
-            class="w-14 md:w-24"
-            src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
-            alt="Icone du canard Aucode"
-          />
-          <h4
-            class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
-          >
-            <span class="text-green-light">16</span> Quiz gratuits
-          </h4>
-
-          <div class="hidden md:flex justify-center">
-            <img
-              v-for="screenshot in screenshots"
-              :key="screenshot.url"
-              class="w-[30%]"
-              :src="screenshot.url"
-              :alt="screenshot.alt"
-            />
-          </div>
-
-          <div class="md:hidden w-full">
-            <Swiper
-              class="w-full swiper-screenshots-wrapper"
-              :modules="[SwiperEffectCoverflow, SwiperPagination]"
-              :slides-per-view="'auto'"
-              :grabCursor="true"
-              :space-between="24"
-              :centeredSlides="true"
-              :pagination="{ clickable: false }"
-              :coverflow-effect="{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2,
-                slideShadows: true,
-              }"
-            >
-              <SwiperSlide
-                class="bg-white rounded-2xl w-[15rem] flex flex-col justify-between"
-                v-for="screenshot in screenshots"
-                :key="screenshot.url"
+          <div class="md:max-w-[1440px] md:mx-auto">
+            <div ref="pricing">
+              <h4
+                class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20 text-white"
               >
-                <img :src="screenshot.url" :alt="screenshot.alt" />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+                Pricing
+              </h4>
 
-      <div ref="pricing" class="text-green-dark -mt-10 z-10 relative">
-        <h4
-          class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20"
-        >
-          Pricing
-        </h4>
+              <div
+                class="flex flex-col md:flex-row gap-8 justify-center mx-6 md:mx-0 text-green-dark"
+              >
+                <div
+                  v-for="price in prices"
+                  :key="price.title"
+                  class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 lg:p-14 py-12 px-6 md:w-[20rem] lg:w-[29rem]"
+                >
+                  <span class="text-4xl md:text-5xl tracking-tighter">
+                    {{ price.title }}
+                  </span>
+                  <span
+                    class="text-[3.5rem] leading-[3.5rem] md:text-8xl mt-5 md:mt-8 tracking-tighter text-bg-linear-2"
+                  >
+                    {{ price.number }}
+                  </span>
 
-        <div
-          class="flex flex-col md:flex-row gap-8 justify-center mx-6 md:mx-0"
-        >
-          <div
-            v-for="price in prices"
-            :key="price.title"
-            class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 lg:p-14 py-12 px-6 md:w-[20rem] lg:w-[29rem]"
-          >
-            <span class="text-4xl md:text-5xl tracking-tighter">
-              {{ price.title }}
-            </span>
-            <span
-              class="text-[3.5rem] leading-[3.5rem] md:text-8xl mt-5 md:mt-8 tracking-tighter text-bg-linear-2"
-            >
-              {{ price.number }}
-            </span>
-
-            <ul
-              class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-5 md:mt-8"
-            >
-              <li v-for="feature in price.features" :key="feature">
-                {{ feature }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div ref="about" class="relative text-white w-full">
-        <div class="md:max-w-[1440px] md:mx-auto relative">
-          <div class="w-full absolute -top-[14rem] left-0 z-0 overflow-hidden">
-            <BgEllipse
-              class="relative left-1/2 transform -translate-x-[50%] mx-auto"
-            />
-          </div>
-        </div>
-        <div class="md:max-w-[1440px] md:mx-auto">
-          <div
-            class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
-          >
+                  <ul
+                    class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-5 md:mt-8"
+                  >
+                    <li v-for="feature in price.features" :key="feature">
+                      {{ feature }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             <div
               class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
             />
-            <div class="relative z-10">
+            <div ref="about" class="relative z-10">
               <div
                 class="flex flex-col md:flex-row gap-6 text-green-dark justify-center pt-14 md:pt-20 pb-36"
               >
