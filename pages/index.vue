@@ -12,7 +12,6 @@ import IconLinkedin from "@/assets/icons/IconLinkedin.vue";
 import IconX from "@/assets/icons/IconX.vue";
 import IconHuman from "@/assets/icons/IconHuman.vue";
 import IconEye from "@/assets/icons/IconEye.vue";
-import BgEllipse from "@/assets/icons/BgEllipse.vue";
 
 const cards = [
   {
