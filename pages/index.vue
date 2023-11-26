@@ -136,7 +136,8 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
           class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[420px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
         >
           Teste tes acquis de
-          <span class="text-[#b5e04a]"> développeuse </span> avant de postuler
+          <span class="underline"> développeuses </span>
+          avant de postuler
         </h1>
         <p class="my-7">Découvre les 16 Quiz dès maintenant gratuitement !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
@@ -562,12 +563,12 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                     véritablement personnel en lançant mes propres projets.
                     C'est pour ça que j'ai lancé Augalo, une application pour
                     les cavalieres. Et aujourd'hui pour Aucode, une application
-                    pour les développeuses.
+                    pour les codeuses.
                   </p>
                   <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     J'ai toujours cru en la force de la collaboration et de
                     l'esprit d'équipe, mais j'ai également réalisé que la
-                    confiance en soi est fondamentale pour toutes développeuses,
+                    confiance en soi est fondamentale pour toutes codeuses,
                     indépendamment de son expérience.
                   </p>
                 </div>
@@ -579,7 +580,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                 >
                   C'est avec cette idée en tête que
                   <span class="text-green-light">"Aucode"</span> a vu le jour :
-                  un projet pour aider les développeuses à prendre confiance en
+                  un projet pour aider les codeuses à prendre confiance en
                   elles. Ainsi qu'à valoriser leur contribution dans le monde de
                   la tech.
                 </p>
