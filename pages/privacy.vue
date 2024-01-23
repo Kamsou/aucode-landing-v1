@@ -20,7 +20,7 @@ useSeoMeta({
       Politique de confidentalité
     </h1>
 
-    <div class="w-full px-4 md:max-w-[800px] md:mx-auto mb-32">
+    <div class="w-full px-4 md:max-w-[800px] md:mx-auto pb-32">
       <p class="mt-3">
         L’application mobile Aucode ne collectent des données personnelles
         relatives à l’utilisateur que pour le besoin des services proposés par

@@ -19,7 +19,7 @@ useSeoMeta({
     >
       Mentions Légales
     </h1>
-    <div class="w-full px-4 md:max-w-[800px] md:mx-auto mb-32">
+    <div class="w-full px-4 md:max-w-[800px] md:mx-auto pb-32">
       <span class="text-2xl font-bold">Site et Application</span>
       <p class="description">
         - Site internet (ci-après « le Site ») : Désigne le site accessible à
