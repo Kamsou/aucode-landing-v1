@@ -106,13 +106,13 @@ function redirectToApp() {
 
     if (isAndroid) {
       window.location.href =
-        "https://play.google.com/store/apps/details?id=com.ionic.augalo.com&gl=FR";
+        "https://play.google.com/store/apps/details?id=com.aucode.tech&hl=fr&pli=1";
       return;
     }
 
     if (isIos) {
       window.location.href =
-        "https://apps.apple.com/fr/app/augalo/id1598737381";
+        "https://apps.apple.com/fr/app/aucode/id6463032739";
       return;
     }
   }
