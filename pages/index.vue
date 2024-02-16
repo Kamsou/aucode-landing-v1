@@ -72,7 +72,7 @@ const prices = [
   },
   {
     title: "Premium",
-    number: "9,99 €",
+    number: "19,99 €",
     features: ["+30 Quiz", "Corrections", "Résultats"],
   },
 ];
