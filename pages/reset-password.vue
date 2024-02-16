@@ -9,9 +9,7 @@
     <div
       class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto"
     >
-      <div
-        v-if="(!errorMessage && errorMessage === '') || successMessage !== ''"
-      >
+      <div v-if="successMessage === '' && errorMessage === '' && isReady">
         <h1
           class="font-extra-bold text-3xl sm:text-4xl tracking-tighter text-left sm:text-center"
         >
@@ -45,14 +43,16 @@
 
       <div
         v-if="successMessage !== ''"
-        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto"
+        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto text-center"
       >
-        <p>
-          Votre mot de passe a été réinitialisé avec succès. Vous pouvez
-          maintenant vous connecter avec votre nouveau mot de passe.
+        <p class="font-bold tracking-tighter text-2xl">
+          Votre mot de passe a été réinitialisé avec succès.
         </p>
+        <span class="text-sm block">
+          Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.
+        </span>
 
-        <Button variant="secondary" class="w-full" @click="redirectToApp">
+        <Button variant="secondary" class="w-full mt-4" @click="redirectToApp">
           Retourner sur Aucode
         </Button>
       </div>
@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: "Aucode — Confirmation de l'adresse e-mail",
+  title: "Aucode — Réinitialiser le mot de passe",
 });
 
 const supabase = useSupabaseClient();
@@ -72,6 +72,7 @@ const errorMessage = ref<string>("");
 const successMessage = ref<string>("");
 const password = ref("");
 const isLoading = ref(false);
+const isReady = ref(false);
 const accessToken = ref("");
 const refresh_token = ref("");
 
@@ -96,7 +97,6 @@ async function modifyUser() {
 
   isLoading.value = false;
   successMessage.value = "Votre mot de passe a été réinitialisé avec succès.";
-  router.push("/");
 }
 
 function redirectToApp() {
@@ -115,26 +115,35 @@ function redirectToApp() {
         "https://apps.apple.com/fr/app/aucode/id6463032739";
       return;
     }
+
+    router.push("/");
   }
 }
 
-onMounted(async () => {
-  const hash = window.location.hash.substring(1);
-  const params = new URLSearchParams(hash);
-  const errorDescription = params.get("error_description");
+watch(
+  () => router.currentRoute.value,
+  (value) => {
+    const hash = value.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const errorDescription = params.get("error_description");
 
-  accessToken.value = params.get("access_token") as string;
-  refresh_token.value = params.get("refresh_token") as string;
+    accessToken.value = params.get("access_token") as string;
+    refresh_token.value = params.get("refresh_token") as string;
 
-  if (params.size === 0) {
-    router.push("/");
-    return;
-  }
+    if (params.size === 0) {
+      router.push("/");
+      return;
+    }
 
-  if (errorDescription) {
-    errorMessage.value =
-      "Le lien de réinitialisation de mot de passe a expiré. Veuillez refaire une demande.";
-    return;
-  }
-});
+    if (errorDescription) {
+      errorMessage.value =
+        "Le lien de réinitialisation de mot de passe a expiré. Veuillez refaire une demande.";
+      isReady.value = true;
+      return;
+    }
+
+    isReady.value = true;
+  },
+  { immediate: true, deep: true }
+);
 </script>
