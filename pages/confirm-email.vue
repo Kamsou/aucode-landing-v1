@@ -3,12 +3,12 @@
     <img
       src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
       alt="Aucode Logo"
-      class="max-w-[100px] px-6 py-4"
+      class="max-w-[100px] px-6 py-4 absolute top-0 left-0"
     />
 
     <div
       v-if="errorMessage !== ''"
-      class="flex flex-col justify-center items-center px-6 h-[80vh]"
+      class="flex flex-col justify-center items-center px-"
     >
       <h1 class="font-extra-bold text-3xl sm:text-4xl tracking-tighter">
         Confirmation de l'Email

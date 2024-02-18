@@ -3,11 +3,11 @@
     <img
       src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
       alt="Aucode Logo"
-      class="max-w-[100px] px-6 py-4"
+      class="max-w-[100px] px-6 py-4 absolute top-0 left-0"
     />
 
     <div
-      class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto"
+      class="flex flex-col justify-center px-6 sm:w-[600px] sm:mx-auto h-full"
     >
       <div v-if="successMessage === '' && errorMessage === '' && isReady">
         <h1
@@ -20,7 +20,7 @@
           v-model="password"
           type="password"
           label="Nouveau mot de passe"
-          class="my-4 sm:my-12"
+          class="my-4 sm:my-12 text-base"
         />
 
         <Button
