@@ -8,7 +8,7 @@
 
     <div
       v-if="errorMessage !== ''"
-      class="flex flex-col justify-center items-center px-"
+      class="flex flex-col justify-center items-center px-6 h-full"
     >
       <h1 class="font-extra-bold text-3xl sm:text-4xl tracking-tighter">
         Confirmation de l'Email
