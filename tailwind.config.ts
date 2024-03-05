@@ -24,8 +24,8 @@ module.exports = {
         "radial-end": "#B779E4",
       },
       boxShadow: {
-        button: "0px 4px 0px #e5e5e5",
-        "button-hover": "0px 1px 0px #e5e5e5",
+        button: "2px 4px 0px #363A30",
+        "button-hover": "0px 1px 0px #363A30",
       },
       backgroundImage: {
         "radial-custom":

@@ -24,10 +24,10 @@ const stores = [
     target="_blank"
   >
     <button
-      class="bg-white w-full md:w-[11rem] lg:w-[13rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button hover:translate-y-[0.125rem] transition-all duration-300 ease-in-out hover:shadow-button-hover"
+      class="bg-[#43473B] w-full md:w-[11rem] lg:w-[13rem] py-[0.63rem] px-6 text-lg rounded-md flex justify-center items-center gap-1 shadow-button hover:translate-y-[0.125rem] transition-all duration-300 ease-in-out hover:shadow-button-hover"
     >
-      <component :is="store.icon" class="w-5" />
-      <div>
+      <component :is="store.icon" class="w-5 text-background" />
+      <div class="text-white">
         <span class="text-[0.68rem] block leading-3"> Télécharger sur </span>
         <span class="block leading-5">{{ store.name }}</span>
       </div>
