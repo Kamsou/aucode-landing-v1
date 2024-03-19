@@ -167,7 +167,6 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
 
         <NuxtImg
           format="webp"
-          class="max-w-full md:max-w-[380px] lg:max-w-[500px]"
           provider="cloudinary"
           src="/v1710886384/Aucode/solo_1_kvfkki_nphhxj.png"
           alt="Mockup d'un smartphone avec l'application Aucode"
