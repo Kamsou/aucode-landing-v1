@@ -133,10 +133,10 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
     >
       <div class="w-full md:max-w-[50%] relative z-10">
         <h1
-          class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[420px] lg:w-[583px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
+          class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[460px] lg:w-[625px] tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.2rem] lg:leading-[4.3rem] z-10 relative"
         >
-          Teste tes acquis de
-          <span class="underline"> développeur.se </span>
+          Teste tes acquis <br />de
+          <span class="underline"> développeur(se) </span>
           avant de postuler
         </h1>
         <p class="my-7">Découvre les 16 Quiz dès maintenant gratuitement !</p>
