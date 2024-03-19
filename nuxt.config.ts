@@ -1,15 +1,25 @@
-import { title } from "process";
-
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  image: {
+    cloudinary: {
+      baseURL: "https://res.cloudinary.com/augalo/image/upload/",
+    },
+  },
   devtools: { enabled: false },
   ssr: true,
-  modules: ["@nuxtjs/supabase", "@nuxtjs/tailwindcss", "nuxt-swiper"],
+  modules: [
+    "@nuxtjs/supabase",
+    "@nuxtjs/tailwindcss",
+    "nuxt-swiper",
+    "@nuxt/image",
+  ],
   supabase: {
     redirect: false,
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       title: "Teste tes acquis de développeur(se) avant de postuler",

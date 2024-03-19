@@ -152,28 +152,40 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
           <div
             class="bg-green-light rounded-xl absolute top-0 left-4 md:left-24 py-1 text-xs font-bold flex justify-center items-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
           >
-            <img
-              class="w-[2.5rem] md:w-[3.3rem]"
-              src="https://res.cloudinary.com/augalo/image/upload/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
+            <NuxtImg
+              format="webp"
+              class="w-10 h-10 md:w-[3.3rem] md:h-[3.3rem]"
+              provider="cloudinary"
+              src="/v1699195810/Aucode/duck-icon-face_cxs9qh.png"
               alt="Icone du canard Aucode"
+              width="53"
+              height="53"
             />
             <span class="uppercase">Rejoins-nous !</span>
           </div>
         </Parallax>
-        <img
+        <NuxtImg
+          format="webp"
           class="max-w-full md:max-w-[380px] lg:max-w-[500px]"
-          src="https://res.cloudinary.com/augalo/image/upload/v1699567485/Aucode/solo_1_kvfkki.png"
+          provider="cloudinary"
+          src="/v1710886384/Aucode/solo_1_kvfkki_nphhxj.png"
           alt="Mockup d'un smartphone avec l'application Aucode"
+          width="500"
+          height="446"
         />
 
         <Parallax :factor="0.05">
           <div
             class="bg-green-light rounded-xl absolute bottom-5 md:bottom-12 right-5 md:right-12 lg:right-20 text-xs font-bold flex items-center justify-center gap-[0.38rem] w-[10rem] md:w-[11rem]"
           >
-            <img
+            <NuxtImg
+              format="webp"
               class="w-[2.3rem] md:w-[3.3rem]"
-              src="https://res.cloudinary.com/augalo/image/upload/v1689610705/Aucode/duck_yosxyk.png"
+              provider="cloudinary"
+              src="/v1689610705/Aucode/duck_yosxyk.png"
               alt="Illustration du canard Aucode"
+              width="53"
+              height="66"
             />
             <span class="uppercase">c’est gratuit !</span>
           </div>
@@ -317,24 +329,30 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             ref="quiz"
             class="bg-white text-green-dark flex flex-col justify-center items-center py-8 md:py-16 mx-6 rounded-[2.5rem] md:max-w-[1440px] md:mx-auto md:mt-40"
           >
-            <img
+            <NuxtImg
               class="w-14 md:w-24"
-              src="https://res.cloudinary.com/augalo/image/upload/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
+              provider="cloudinary"
+              src="/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
               alt="Icone du canard Aucode"
+              width="96"
+              height="96"
             />
-            <h4
+            <div
               class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
             >
               <span class="text-green-light">16</span> Quiz gratuits
-            </h4>
+            </div>
 
             <div class="hidden md:flex justify-center">
-              <img
+              <NuxtImg
                 v-for="screenshot in screenshots"
                 :key="screenshot.url"
                 class="w-[30%]"
                 :src="screenshot.url"
                 :alt="screenshot.alt"
+                format="webp"
+                width="374"
+                height="597"
               />
             </div>
 
@@ -360,7 +378,13 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                   v-for="screenshot in screenshots"
                   :key="screenshot.url"
                 >
-                  <img :src="screenshot.url" :alt="screenshot.alt" />
+                  <NuxtImg
+                    format="webp"
+                    :src="screenshot.url"
+                    :alt="screenshot.alt"
+                    width="453"
+                    height="722"
+                  />
                 </SwiperSlide>
               </Swiper>
             </div>
@@ -518,10 +542,13 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                   class="flex flex-col justify-center items-center w-full lg:w-1/2"
                 >
                   <div>
-                    <img
+                    <NuxtImg
+                      format="webp"
                       class="max-w-full md:max-w-[400px] mx-auto md:mx-0"
                       src="https://res.cloudinary.com/augalo/image/upload/v1699568003/Aucode/profile_bwlprr.png"
                       alt="Portrait de Camille, fondatrice de Aucode"
+                      width="400"
+                      height="488"
                     />
 
                     <div
@@ -531,6 +558,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                         to="https://www.linkedin.com/in/camille-coutens-9a0960a5/"
                         target="_blank"
                         class="cursor-pointer"
+                        aria-label="Lien vers le profil Linkedin de Camille"
                       >
                         <component
                           :is="IconLinkedin"
@@ -541,6 +569,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                         to="https://twitter.com/camillecoutens"
                         target="_blank"
                         class="cursor-pointer"
+                        aria-label="Lien vers le profil Twitter de Camille"
                       >
                         <component
                           :is="IconX"
