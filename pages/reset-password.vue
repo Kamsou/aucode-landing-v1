@@ -1,9 +1,12 @@
 <template>
   <section class="h-screen">
-    <img
-      src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
+    <NuxtImg
+      provider="cloudinary"
+      src="/v1689702123/Aucode/logo_genenk.png"
       alt="Aucode Logo"
       class="max-w-[100px] px-6 py-4 absolute top-0 left-0"
+      width="97"
+      height="34"
     />
 
     <div

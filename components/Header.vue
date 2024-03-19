@@ -1,8 +1,12 @@
 <template>
   <div class="max-w-[97px]">
-    <img
-      src="https://res.cloudinary.com/augalo/image/upload/v1689702123/Aucode/logo_genenk.png"
+    <NuxtImg
+      format="webp"
+      provider="cloudinary"
+      src="/v1689702123/Aucode/logo_genenk.png"
       alt="Aucode Logo"
+      width="97"
+      height="34"
     />
   </div>
 </template>

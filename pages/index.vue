@@ -79,15 +79,15 @@ const prices = [
 
 const screenshots = [
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-1_akja37.png",
+    url: "/v1699567323/Aucode/mockup-quiz-1_akja37.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-2_ff9jlf.png",
+    url: "/v1699567323/Aucode/mockup-quiz-2_ff9jlf.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
   {
-    url: "https://res.cloudinary.com/augalo/image/upload/v1699567323/Aucode/mockup-quiz-3_tzqtqv.png",
+    url: "/v1699567323/Aucode/mockup-quiz-3_tzqtqv.png",
     alt: "Screenshot exemple d'une question d'un quiz",
   },
 ];
@@ -164,6 +164,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             <span class="uppercase">Rejoins-nous !</span>
           </div>
         </Parallax>
+
         <NuxtImg
           format="webp"
           class="max-w-full md:max-w-[380px] lg:max-w-[500px]"
@@ -346,6 +347,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             <div class="hidden md:flex justify-center">
               <NuxtImg
                 v-for="screenshot in screenshots"
+                provider="cloudinary"
                 :key="screenshot.url"
                 class="w-[30%]"
                 :src="screenshot.url"
@@ -380,6 +382,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                 >
                   <NuxtImg
                     format="webp"
+                    provider="cloudinary"
                     :src="screenshot.url"
                     :alt="screenshot.alt"
                     width="453"
@@ -545,7 +548,8 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                     <NuxtImg
                       format="webp"
                       class="max-w-full md:max-w-[400px] mx-auto md:mx-0"
-                      src="https://res.cloudinary.com/augalo/image/upload/v1699568003/Aucode/profile_bwlprr.png"
+                      provider="cloudinary"
+                      src="/v1699568003/Aucode/profile_bwlprr.png"
                       alt="Portrait de Camille, fondatrice de Aucode"
                       width="400"
                       height="488"
