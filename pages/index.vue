@@ -546,12 +546,10 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                   <div>
                     <NuxtImg
                       format="webp"
-                      class="max-w-full md:max-w-[400px] mx-auto md:mx-0"
+                      class="bg-cover w-full h-full"
                       provider="cloudinary"
-                      src="/v1699568003/Aucode/profile_bwlprr.png"
+                      src="/v1711108118/Aucode/Sans_titre-2_rcghkk.png"
                       alt="Portrait de Camille, fondatrice de Aucode"
-                      width="400"
-                      height="488"
                     />
 
                     <div
