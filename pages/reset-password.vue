@@ -1,68 +1,3 @@
-<template>
-  <section class="h-screen">
-    <NuxtImg
-      provider="cloudinary"
-      src="/v1689702123/Aucode/logo_genenk.png"
-      alt="Aucode Logo"
-      class="max-w-[100px] px-6 py-4 absolute top-0 left-0"
-      width="97"
-      height="34"
-    />
-
-    <div
-      class="flex flex-col justify-center px-6 sm:w-[600px] sm:mx-auto h-full"
-    >
-      <div v-if="successMessage === '' && errorMessage === '' && isReady">
-        <h1
-          class="font-extra-bold text-3xl sm:text-4xl tracking-tighter text-left sm:text-center"
-        >
-          Mot de passe oublié ?
-        </h1>
-
-        <Input
-          v-model="password"
-          type="password"
-          label="Nouveau mot de passe"
-          class="my-4 sm:my-12 text-base"
-        />
-
-        <Button
-          variant="primary"
-          class="w-full"
-          @click="modifyUser"
-          :disabled="hasButtonDisabled"
-        >
-          <span v-if="isLoading">En cours...</span>
-          <span v-else>Reinitaliser le mot de passe</span>
-        </Button>
-      </div>
-
-      <div
-        v-if="errorMessage"
-        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto"
-      >
-        {{ errorMessage }}
-      </div>
-
-      <div
-        v-if="successMessage !== ''"
-        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto text-center"
-      >
-        <p class="font-bold tracking-tighter text-2xl">
-          Votre mot de passe a été réinitialisé avec succès.
-        </p>
-        <span class="text-sm block">
-          Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.
-        </span>
-
-        <Button variant="secondary" class="w-full mt-4" @click="redirectToApp">
-          Retourner sur Aucode
-        </Button>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script setup lang="ts">
 useSeoMeta({
   title: "Aucode — Réinitialiser le mot de passe",
@@ -150,3 +85,68 @@ watch(
   { immediate: true, deep: true }
 );
 </script>
+
+<template>
+  <section class="h-screen">
+    <NuxtImg
+      provider="cloudinary"
+      src="/v1689702123/Aucode/logo_genenk.png"
+      alt="Aucode Logo"
+      class="max-w-[100px] px-6 py-4 absolute top-0 left-0"
+      width="97"
+      height="34"
+    />
+
+    <div
+      class="flex flex-col justify-center px-6 sm:w-[600px] sm:mx-auto h-full"
+    >
+      <div v-if="successMessage === '' && errorMessage === '' && isReady">
+        <h1
+          class="font-extra-bold text-3xl sm:text-4xl tracking-tighter text-left sm:text-center"
+        >
+          Mot de passe oublié ?
+        </h1>
+
+        <Input
+          v-model="password"
+          type="password"
+          label="Nouveau mot de passe"
+          class="my-4 sm:my-12 text-base"
+        />
+
+        <Button
+          variant="primary"
+          class="w-full"
+          @click="modifyUser"
+          :disabled="hasButtonDisabled"
+        >
+          <span v-if="isLoading">En cours...</span>
+          <span v-else>Reinitaliser le mot de passe</span>
+        </Button>
+      </div>
+
+      <div
+        v-if="errorMessage"
+        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto"
+      >
+        {{ errorMessage }}
+      </div>
+
+      <div
+        v-if="successMessage !== ''"
+        class="flex flex-col justify-center px-6 h-[80vh] sm:w-[600px] sm:mx-auto text-center"
+      >
+        <p class="font-bold tracking-tighter text-2xl">
+          Votre mot de passe a été réinitialisé avec succès.
+        </p>
+        <span class="text-sm block">
+          Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.
+        </span>
+
+        <Button variant="secondary" class="w-full mt-4" @click="redirectToApp">
+          Retourner sur Aucode
+        </Button>
+      </div>
+    </div>
+  </section>
+</template>

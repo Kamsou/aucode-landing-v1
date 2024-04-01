@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      title: "Teste tes acquis de développeur(se) avant de postuler",
+      title: "Aucode - Teste tes acquis de développeur·se avant de postuler",
       meta: [
         {
           name: "description",
