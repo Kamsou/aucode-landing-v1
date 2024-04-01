@@ -133,14 +133,14 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
     >
       <div class="w-full md:max-w-[50%] relative z-10">
         <h1
-          class="text-[11vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[460px] lg:w-[625px] tracking-tighter md:tracking-[-0.25rem] font-bold text-green-dark leading-[11vw] md:leading-[3.5rem] lg:leading-[4.5rem] z-10 relative"
+          class="text-[10vw] md:text-[3.4rem] lg:text-[4.625rem] w-full md:w-[460px] lg:w-[625px] md:tracking-[-0.25rem] font-bold text-green-dark leading-[10vw] md:leading-[3.5rem] lg:leading-[4.5rem] z-10 relative"
         >
           Teste tes acquis <br />de
           <div
             class="text-background text-[10vw] md:text-[3.4rem] lg:text-[4rem] relative contents"
           >
             <span
-              class="bg-green-dark w-[66vw] md:w-[360px] lg:w-[440px] h-[30%] md:h-[3.5rem] lg:h-[4.5rem] absolute top-[12vw] md:top-[3.5rem] lg:top-[4.6rem] md:right-[2.5rem] lg:right-[6.2rem] -z-10 rounded-lg"
+              class="bg-green-dark w-[71vw] md:w-[360px] lg:w-[440px] h-[35%] md:h-[3.5rem] lg:h-[4.5rem] absolute top-[10vw] md:top-[3.5rem] lg:top-[4.6rem] md:right-[2.5rem] lg:right-[6.2rem] -z-10 rounded-lg"
             />
             développeur·se
           </div>
@@ -495,7 +495,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
           class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
         >
           <div class="md:max-w-[1440px] md:mx-auto">
-            <div ref="pricing">
+            <!-- <div ref="pricing">
               <h4
                 class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20 text-white"
               >
@@ -528,10 +528,11 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div
               class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
             />
+
             <div ref="about" class="relative z-10">
               <div
                 class="flex flex-col md:flex-row gap-6 text-green-dark justify-center pt-14 md:pt-20 pb-36"
