@@ -295,7 +295,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             class="md:mt-20 mb-32 md:mb-0 md:my-52 mx-6 md:mx-0 border-b border-green-light border-opacity-10"
           >
             <h2
-              class="mb-12 md:mb-20 text-[3.25rem] leading-[3.25rem] md:leading-normal md:text-7xl tracking-tighter"
+              class="mb-12 md:mb-20 text-[3.25rem] leading-[3.25rem] md:leading-normal md:text-7xl tracking-tighter break-words"
             >
               <span class="text-green-light">4</span> thématiques
             </h2>
