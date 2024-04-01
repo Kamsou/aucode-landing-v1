@@ -338,7 +338,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             <div
               class="text-5xl md:text-7xl tracking-tighter font-bold mt-7 mb-11 md:mb-20 text-center"
             >
-              <span class="text-green-light">16</span> Quiz gratuits
+              <span class="text-green-light">+32</span> Quiz
             </div>
 
             <div class="hidden md:flex justify-center">
@@ -525,16 +525,11 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             />
 
             <div ref="about" class="relative z-10">
-              <div
-                class="flex flex-col md:flex-row gap-6 text-green-dark justify-center pt-14 md:pt-20 pb-36"
-              >
-                <Buttons class="flex justify-center w-full" />
-              </div>
-              <h5
+              <h4
                 class="font-bold text-[2.8rem] leading-[2.8rem] sm:text-xl md:text-7xl text-center tracking-tighter"
               >
                 Qui est derrière <span class="text-green-light">Aucode</span> ?
-              </h5>
+              </h4>
 
               <div
                 class="mt-16 md:mt-32 flex flex-col lg:flex-row gap-16 md:gap-24 items-center"
