@@ -587,12 +587,12 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                     véritablement personnel en lançant mes propres projets.
                     C'est pour ça que j'ai lancé Augalo, une application pour
                     les cavalieres. Et aujourd'hui pour Aucode, une application
-                    pour les codeur.se.s .
+                    pour les codeur·se·s.
                   </p>
                   <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     J'ai toujours cru en la force de la collaboration et de
                     l'esprit d'équipe, mais j'ai également réalisé que la
-                    confiance en soi est fondamentale pour toutes codeur.se.s ,
+                    confiance en soi est fondamentale pour toutes codeur·se·s ,
                     indépendamment de son expérience.
                   </p>
                 </div>
@@ -604,7 +604,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                 >
                   C'est avec cette idée en tête que
                   <span class="text-green-light">"Aucode"</span> a vu le jour :
-                  un projet pour aider les codeur.se.s à prendre confiance en
+                  un projet pour aider les codeur·se·s à prendre confiance en
                   elles. Ainsi qu'à valoriser leur contribution dans le monde de
                   la tech.
                 </p>
