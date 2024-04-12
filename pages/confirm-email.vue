@@ -25,7 +25,7 @@ onMounted(async () => {
     });
 
     if (error) {
-      if (error.status === 401) {
+      if (error.status === 401 || error.status === 403) {
         errorMessage.value =
           "Le lien de confirmation a expiré. Veuillez vous inscrire à nouveau.";
         return;
