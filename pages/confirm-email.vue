@@ -78,7 +78,7 @@ onMounted(async () => {
         </p>
         <p v-if="errorMessage">{{ errorMessage }}</p>
         <div v-else>
-          <p>
+          <p class="max-w-xl">
             Votre adresse email <b> {{ route.query.email }}</b> a été confirmée
             avec succès ! Vous pouvez maintenant vous connecter avec votre
             adresse email.
