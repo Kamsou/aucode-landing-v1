@@ -330,7 +330,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
             <NuxtImg
               class="w-14 md:w-24"
               provider="cloudinary"
-              src="/v1693753451/Aucode/duck-icon-face_jfzsmb.png"
+              src="/v1713366012/Aucode/code-2024_ex6wvx.png"
               alt="Icone du canard Aucode"
               width="96"
               height="96"
