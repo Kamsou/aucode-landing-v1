@@ -111,7 +111,7 @@ watch(
           v-model="password"
           type="password"
           label="Nouveau mot de passe"
-          class="my-4 sm:my-12 text-base"
+          class="my-4 sm:my-12 text-lg"
         />
 
         <Button
