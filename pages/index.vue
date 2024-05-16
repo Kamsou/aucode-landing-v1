@@ -137,7 +137,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
         >
           Teste tes acquis <br />de développeur·se avant de postuler
         </h1>
-        <p class="my-7">Découvre les 16 Quiz dès maintenant gratuitement !</p>
+        <p class="my-7">Découvre nos Quiz dès maintenant gratuitement !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
           <Buttons />
         </div>

@@ -27,7 +27,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "description",
-          content: "Découvre les 16 Quiz dès maintenant gratuitement !",
+          content: "Découvre nos Quiz dès maintenant gratuitement !",
         },
         {
           name: "og:title",
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         },
         {
           name: "og:description",
-          content: "Découvre les 16 Quiz dès maintenant gratuitement !",
+          content: "Découvre nos Quiz dès maintenant gratuitement !",
         },
         {
           name: "og:image",
