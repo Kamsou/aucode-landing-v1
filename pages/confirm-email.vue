@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { Resend } from "resend";
+import { useCompiler } from "#vue-email";
+
+const resend = new Resend("re_hSEcWPEG_Lr8NEbXFLCuVHQiHqtjbjYJv");
+
 useSeoMeta({
   title: "Aucode — Confirmation de l'adresse e-mail",
 });
@@ -25,17 +30,16 @@ onMounted(async () => {
     });
 
     if (data.user?.aud === "authenticated") {
-      try {
-        await fetch("/.netlify/functions/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ to: data.user?.email }),
-        });
-      } catch (error) {
-        console.error("Error sending email:", error);
-      }
+      const template = await useCompiler("welcome.vue");
+
+      const options = {
+        from: "Aucode <contact@aucode.tech>",
+        to: "camille.coutens@gmail.com",
+        subject: "Bienvenue sur Aucode",
+        html: template.html,
+      };
+
+      await resend.emails.send(options);
     }
 
     if (error) {
