@@ -28,16 +28,16 @@ onMounted(async () => {
       type: "email",
     });
 
-    if (data.user?.aud === "authenticated") {
-      const options = {
-        from: "Aucode <contact@aucode.tech>",
-        to: "camille.coutens@gmail.com",
-        subject: "Bienvenue sur Aucode",
-        text: `Bonjour, ${email} vient de confirmer son adresse email sur Aucode.`,
-      };
+    // if (data.user?.aud === "authenticated") {
+    //   const options = {
+    //     from: "Aucode <contact@aucode.tech>",
+    //     to: "camille.coutens@gmail.com",
+    //     subject: "Bienvenue sur Aucode",
+    //     text: `Bonjour, ${email} vient de confirmer son adresse email sur Aucode.`,
+    //   };
 
-      await resend.emails.send(options);
-    }
+    //   await resend.emails.send(options);
+    // }
 
     if (error) {
       if (error.status === 403) {
