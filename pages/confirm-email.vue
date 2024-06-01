@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Resend } from "resend";
-import { useCompiler } from "#vue-email";
 
 const resend = new Resend("re_hSEcWPEG_Lr8NEbXFLCuVHQiHqtjbjYJv");
 
@@ -30,13 +29,11 @@ onMounted(async () => {
     });
 
     if (data.user?.aud === "authenticated") {
-      const template = await useCompiler("welcome.vue");
-
       const options = {
         from: "Aucode <contact@aucode.tech>",
         to: "camille.coutens@gmail.com",
         subject: "Bienvenue sur Aucode",
-        html: template.html,
+        text: `Bonjour, ${email} vient de confirmer son adresse email sur Aucode.`,
       };
 
       await resend.emails.send(options);
