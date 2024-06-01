@@ -75,7 +75,7 @@ onMounted(async () => {
 
     <div
       v-if="errorMessage !== ''"
-      class="flex flex-col justify-center items-center px-6 h-full"
+      class="flex flex-col justify-center items-start px-6 h-screen"
     >
       <h1 class="font-extra-bold text-3xl sm:text-4xl tracking-tighter">
         Confirmation de l'Email
