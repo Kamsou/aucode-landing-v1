@@ -26,7 +26,7 @@ onMounted(async () => {
 
     if (data.user?.aud === "authenticated") {
       try {
-        await fetch("/api/send-email", {
+        await fetch("/api/emails/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
