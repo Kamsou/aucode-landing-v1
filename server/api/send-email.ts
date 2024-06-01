@@ -16,5 +16,8 @@ export default defineEventHandler(async (event) => {
   };
 
   await resend.emails.send(options);
-  return { message: "Email sent" };
+  return {
+    statusCode: 200,
+    body: { message: "Email sent successfully!" },
+  };
 });

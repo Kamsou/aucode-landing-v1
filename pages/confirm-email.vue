@@ -95,5 +95,11 @@ onMounted(async () => {
         </div>
       </div>
     </div>
+
+    <div v-else class="flex flex-col justify-center items-start px-6 h-screen">
+      <div class="mt-4 text-xs sm:text-base sm:text-center">
+        Patience, on confirme ton adresse email...
+      </div>
+    </div>
   </section>
 </template>
