@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-swiper",
     "@nuxt/image",
+    "@vue-email/nuxt",
   ],
   supabase: {
     redirect: false,

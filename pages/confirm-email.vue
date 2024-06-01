@@ -24,19 +24,24 @@ onMounted(async () => {
       type: "email",
     });
 
-    if (data) {
-      console.log(data, "data");
+    if (data.user?.aud === "authenticated") {
+      try {
+        await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ to: data.user?.email }),
+        });
+      } catch (error) {
+        console.error("Error sending email:", error);
+      }
     }
 
     if (error) {
       if (error.status === 403) {
         errorMessage.value =
-          "Le lien de confirmation a expiré. Nous venons de vous en envoyer un nouveau.";
-
-        await supabase.auth.resend({
-          type: "signup",
-          email,
-        });
+          "Le lien de confirmation a expiré. Veuillez nous contacter sur contact@aucode.tech";
         return;
       }
 
