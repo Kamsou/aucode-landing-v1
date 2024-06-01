@@ -481,45 +481,13 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
         </div>
       </div>
 
-      <div class="relative text-white w-full">
+      <div
+        class="relative text-white w-full bg-gradient-to-r from-bg-linear-1 to-bg-linear-2"
+      >
         <div
           class="px-6 md:px-24 relative bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 h-full"
         >
           <div class="md:max-w-[1440px] md:mx-auto">
-            <!-- <div ref="pricing">
-              <h4
-                class="text-5xl md:text-[5rem] font-bold text-center tracking-tighter mb-16 md:mb-20 text-white"
-              >
-                Pricing
-              </h4>
-
-              <div
-                class="flex flex-col md:flex-row gap-8 justify-center mx-6 md:mx-0 text-green-dark"
-              >
-                <div
-                  v-for="price in prices"
-                  :key="price.title"
-                  class="bg-white flex flex-col items-center justify-center rounded-3xl p-0 lg:p-14 py-12 px-6 md:w-[20rem] lg:w-[29rem]"
-                >
-                  <span class="text-4xl md:text-5xl tracking-tighter">
-                    {{ price.title }}
-                  </span>
-                  <span
-                    class="text-[3.5rem] leading-[3.5rem] md:text-8xl mt-5 md:mt-8 tracking-tighter text-bg-linear-2"
-                  >
-                    {{ price.number }}
-                  </span>
-
-                  <ul
-                    class="text-xl text-center md:text-2xl text-green-dark opacity-60 leading-8 mt-5 md:mt-8"
-                  >
-                    <li v-for="feature in price.features" :key="feature">
-                      {{ feature }}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div> -->
             <div
               class="bg-radial-custom from-radial-start via-radial-end to-radial-start absolute inset-0 opacity-5"
             />
@@ -557,7 +525,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                       >
                         <component
                           :is="IconLinkedin"
-                          class="w-8 h-8 text-green-light"
+                          class="w-5 h-5 text-green-light"
                         />
                       </NuxtLink>
                       <NuxtLink
@@ -568,7 +536,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                       >
                         <component
                           :is="IconX"
-                          class="w-8 h-8 text-green-light"
+                          class="w-5 h-5 text-green-light"
                         />
                       </NuxtLink>
                     </div>

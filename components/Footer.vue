@@ -8,36 +8,40 @@
         provider="cloudinary"
         src="/v1689702123/Aucode/logo_genenk.png"
         alt="Aucode Logo"
-        class="w-24 mb-16 md:mb-0"
+        class="w-24 mb-16 md:mb-2"
         width="97"
         height="34"
       />
-      <div class="flex flex-col md:flex-row md:gap-11 w-full px-6">
+      <div
+        class="flex flex-col md:flex-row md:gap-11 w-full px-6 h-full justify-center items-center"
+      >
         <NuxtLink
           to="https://www.linkedin.com/company/aucode-tech"
+          class="w-full md:w-auto"
           target="_blank"
         >
           <div
             class="py-5 md:py-0 border-t border-gray-light border-opacity-40 md:border-none hover:cursor-pointer group"
           >
-            <span>
-              Linkedin
-              <span
-                class="block h-0.5 w-0 bg-green-dark md:group-hover:w-full transition-all"
-              />
-            </span>
+            Linkedin
+            <span
+              class="block md:hidden h-0.5 w-0 bg-green-dark md:group-hover:w-full transition-all"
+            />
           </div>
         </NuxtLink>
-        <NuxtLink to="https://twitter.com/aucode_app" target="_blank">
+
+        <NuxtLink
+          to="https://twitter.com/aucode_app"
+          target="_blank"
+          class="w-full md:w-auto"
+        >
           <div
             class="py-5 md:py-0 border-t border-gray-light border-opacity-40 w-full md:border-none hover:cursor-pointer group"
           >
-            <span>
-              X
-              <span
-                class="block h-0.5 w-0 bg-green-dark md:group-hover:w-full transition-all"
-              />
-            </span>
+            X
+            <span
+              class="block md:hidden h-0.5 w-0 bg-green-dark md:group-hover:w-full transition-all"
+            />
           </div>
         </NuxtLink>
       </div>

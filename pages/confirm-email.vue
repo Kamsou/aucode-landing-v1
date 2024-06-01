@@ -18,18 +18,22 @@ onMounted(async () => {
       return;
     }
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { data, error } = await supabase.auth.verifyOtp({
       email,
       token,
       type: "email",
     });
+
+    if (data) {
+      console.log(data, "data");
+    }
 
     if (error) {
       if (error.status === 403) {
         errorMessage.value =
           "Le lien de confirmation a expiré. Nous venons de vous en envoyer un nouveau.";
 
-        const { data, error } = await supabase.auth.resend({
+        await supabase.auth.resend({
           type: "signup",
           email,
         });
