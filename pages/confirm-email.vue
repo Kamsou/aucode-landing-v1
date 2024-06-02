@@ -18,23 +18,23 @@ onMounted(async () => {
       return;
     }
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { data, error } = await supabase.auth.verifyOtp({
       email,
       token,
       type: "email",
     });
 
-    // if (data.user?.aud === "authenticated") {
-    //   const { data: updateData, error } = await supabase
-    //     .from("users")
-    //     .update({
-    //       confirmed_at: data.user.confirmed_at,
-    //     } as never)
-    //     .eq("email", email);
+    if (data.user?.aud === "authenticated") {
+      const { data: updateData, error } = await supabase
+        .from("users")
+        .update({
+          confirmed_at: data.user.confirmed_at,
+        } as never)
+        .eq("email", email);
 
-    //   console.log(error, "error");
-    //   console.log(updateData, "updateData");
-    // }
+      console.log(error, "error");
+      console.log(updateData, "updateData");
+    }
 
     if (error) {
       if (error.status === 403) {
