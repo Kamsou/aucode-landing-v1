@@ -10,7 +10,6 @@ import {
   EButton,
   EHr,
 } from "vue-email";
-import UAParser from "ua-parser-js";
 
 const main = {
   backgroundColor: "#ffffff",
