@@ -25,35 +25,45 @@ onMounted(async () => {
     });
 
     if (data.user?.aud === "authenticated") {
-      const { data: updateData, error } = await supabase
-        .from("users")
-        .update({
-          confirmed_at: data.user.confirmed_at,
-        } as never)
-        .eq("email", email);
+      const user = await supabase.auth.getUser();
 
-      console.log(error, "error");
-      console.log(updateData, "updateData");
+      if (user) {
+        const { error: insertError } = await supabase
+          .from("users")
+          .insert({
+            id: user.data.user?.id,
+            email: user.data.user?.email,
+            name: user.data.user?.user_metadata.name,
+            preferred_username: user.data.user?.user_metadata.preferred_username,
+            birth_date: user.data.user?.user_metadata.birth_date,
+            professional_status: user.data.user?.user_metadata.professional_status,
+            is_actively_looking:  user.data.user?.user_metadata.is_actively_looking,
+            referral_source: user.data.user?.user_metadata.referral_source,
+            has_cgv_accepted: user.data.user?.user_metadata.has_cgv_accepted,
+            has_marketing_accepted: user.data.user?.user_metadata.has_marketing_accepted,
+          } as never);
+
+        if (insertError) {
+          errorMessage.value =
+            "Une erreur s'est produite lors de la confirmation. Veuillez nous contacter si le problème persiste.";
+          return;
+        }
+      }
     }
 
     if (error) {
-      if (error.status === 403) {
-        errorMessage.value =
-          "Le lien de confirmation a expiré. Veuillez nous contacter sur contact@aucode.tech";
-        return;
-      }
-
       if (error.status === 404) {
+        console.error("Token not found");
         router.push("/");
         return;
       }
 
+      console.error("Error verifying OTP:", error);
       errorMessage.value =
         "Une erreur s'est produite lors de la confirmation. Veuillez nous contacter si le problème persiste.";
       return;
     }
 
-    errorMessage.value = null;
   } catch (e) {
     errorMessage.value = "Une erreur s'est produite lors de la confirmation.";
   }
@@ -75,7 +85,7 @@ onMounted(async () => {
       v-if="errorMessage !== ''"
       class="flex flex-col justify-center items-start md:items-center px-6 h-screen"
     >
-      <h1 class="font-extra-bold text-3xl sm:text-4xl tracking-tighter">
+      <h1 v-if="!errorMessage" class="font-extra-bold text-3xl sm:text-4xl tracking-tighter">
         Confirmation de l'Email
       </h1>
 
@@ -89,6 +99,7 @@ onMounted(async () => {
             Votre adresse email <b> {{ route.query.email }}</b> a été confirmée
             avec succès ! Vous pouvez maintenant vous connecter avec votre
             adresse email.
+
           </p>
         </div>
       </div>

@@ -4,8 +4,10 @@ export default defineNuxtConfig({
       baseURL: "https://res.cloudinary.com/augalo/image/upload/",
     },
   },
+
   devtools: { enabled: false },
   ssr: true,
+
   modules: [
     "@nuxtjs/supabase",
     "@nuxtjs/tailwindcss",
@@ -15,7 +17,10 @@ export default defineNuxtConfig({
   ],
   supabase: {
     redirect: false,
+    url: process.env.NUXT_SUPABASE_URL,
+    key: process.env.NUXT_SUPABASE_ANON_KEY,
   },
+
   app: {
     head: {
       htmlAttrs: {
@@ -46,4 +51,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: "2025-01-16",
 });
