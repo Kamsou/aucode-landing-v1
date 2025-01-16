@@ -43,7 +43,7 @@ onMounted(async () => {
             has_marketing_accepted: user.data.user?.user_metadata.has_marketing_accepted,
           } as never);
 
-        errorMessage.value = "";
+        errorMessage.value = null;
 
         if (insertError) {
           errorMessage.value =
@@ -92,9 +92,6 @@ onMounted(async () => {
       </h1>
 
       <div class="mt-4 text-xs sm:text-base sm:text-center">
-        <p v-if="errorMessage === ''">
-          Veuillez patienter, nous confirmons votre adresse email...
-        </p>
         <p v-if="errorMessage">{{ errorMessage }}</p>
         <div v-else>
           <p class="max-w-xl">
