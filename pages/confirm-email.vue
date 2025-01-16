@@ -43,6 +43,8 @@ onMounted(async () => {
             has_marketing_accepted: user.data.user?.user_metadata.has_marketing_accepted,
           } as never);
 
+        errorMessage.value = "";
+
         if (insertError) {
           errorMessage.value =
             "Une erreur s'est produite lors de la confirmation. Veuillez nous contacter si le problème persiste.";
