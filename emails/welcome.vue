@@ -87,7 +87,7 @@ const footer = {
           La Aucode Team
         </EText>
         <EHr :style="hr" />
-        <EText :style="footer"> Aucode - France. 2024 </EText>
+        <EText :style="footer"> Aucode </EText>
       </EContainer>
     </EBody>
   </EHtml>

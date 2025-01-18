@@ -97,24 +97,28 @@ const topics = computed(() => {
     {
       name: "Front-end",
       description: `Le front-end fait référence à la partie visible d'une application ou d'un site web, celle avec laquelle l'utilisateur interagit directement.`,
+      examples: ["Vue", "React", "Angular", 'Svelte'],
       icon: IconPencil,
     },
     {
       name: "Back-end",
       description: `Le back-end est tout ce qui se passe en coulisse pour faire fonctionner une application ou un site web. Cela comprend les serveurs,
 les bases de données, les applications, les API (interfaces de programmation d'applications) et toute autre infrastructure nécessaire.`,
+      examples: ["Adonis", "Django", ".NET", 'Rails', 'Symfony'],
       icon: IconVector,
     },
     {
       name: "Culture générale",
       description: `La culture générale dans la tech est une compréhension de base des tendances, innovations et enjeux du monde technologique.
 Elle englobe la connaissance des principaux acteurs, des débats actuels et des impacts de la technologie sur la société.`,
+      examples: ["Histoire de l'informatique", "Base des systèmes d'exploitation", "Réseaux et internet", 'Concepts fondamentaux du matériel', 'Intelligence artificielle'], 
       icon: IconBook,
     },
     {
       name: "Prospection",
       description: `La prospection est l'acte de rechercher activement de nouveaux clients ou opportunités pour une entreprise ou un service, souvent
 à travers des démarches directes comme les appels, les emails ou les rencontres.`,
+      examples: ["Branding personnel et positionnement", "Réseautage et recommandations", "Prospections sur les plateformes", 'Gestion financière et tarification'],
       icon: IconMagnifier,
     },
   ];
@@ -137,7 +141,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
         >
           Teste tes acquis <br />de développeur·se avant de postuler
         </h1>
-        <p class="my-7">Découvre nos Quiz dès maintenant gratuitement !</p>
+        <p class="my-7">Surmonte le syndrome de l’imposteur avec nos Quiz gratuits !</p>
         <div class="flex flex-col md:flex-row gap-4 md:gap-6">
           <Buttons />
         </div>
@@ -315,8 +319,14 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
               </div>
 
               <p class="text-sm w-[35%] md:w-[45%] lg:w-[35%] hidden md:block">
-                {{ topic.description }}
+                <span>{{ topic.description }}</span>
+                <span class="flex gap-1 mt-2 text-green-light flex-wrap">
+                  Ex :
+                  <span v-for="example in topic.examples" :key="example">{{ example }},</span>
+                etc.
+                </span>
               </p>
+
               <div class="flex justify-end w-[20%] md:w-[18%]">
                 <component :is="topic.icon" class="text-green-light w-8" />
               </div>
@@ -510,7 +520,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                       format="webp"
                       class="bg-cover w-full h-full"
                       provider="cloudinary"
-                      src="/v1711108118/Aucode/Sans_titre-2_rcghkk.png"
+                      src="/v1737224499/Aucode/cam_ddizm7.jpg"
                       alt="Portrait de Camille, fondatrice de Aucode"
                     />
 
@@ -545,8 +555,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
 
                 <div class="w-full lg:w-1/2 text-sm md:text-xl px-6 md:px-0">
                   <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
-                    Quand j'ai débuté dans le monde du dev, j'ai grandement
-                    appris et travaillé auprès d'agences et de startups
+                    Je m'appelle Camille. A mes débuts dans le dev, j'ai pu travaillé auprès d'agences et de startups
                     innovantes en France. J'y ai rencontré de formidables
                     personnes qui m'ont appris et soutenu.
                   </p>
@@ -554,9 +563,11 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
                     Par la suite, j'ai voulu façonner quelque chose de
                     véritablement personnel en lançant mes propres projets.
                     C'est pour ça que j'ai lancé Augalo, une application pour
-                    les cavalieres. Et aujourd'hui pour Aucode, une application
-                    pour les codeur·se·s.
+                    les cavalieres. 
                   </p>
+                  <p class="mb-8 leading-[1.6rem] md:leading-7 opacity-70">
+                    Et aujourd'hui pour Aucode, une application
+                    pour les codeur·se·s.</p>
                   <p class="md:mb-8 leading-[1.6rem] md:leading-7 opacity-70">
                     J'ai toujours cru en la force de la collaboration et de
                     l'esprit d'équipe, mais j'ai également réalisé que la

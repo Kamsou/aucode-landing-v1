@@ -95,7 +95,7 @@
       <span
         class="text-xs py-5 md:py-0 border-t border-gray-light border-opacity-40 text-center md:border-none pt-16 md:pt-0 w-full md:w-[140px]"
       >
-        Aucode 2024
+        Aucode {{ new Date().getFullYear() }}
       </span>
     </div>
   </div>
