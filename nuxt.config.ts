@@ -29,19 +29,19 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport:
         "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
-      title: "Aucode - Teste tes acquis de développeur·se avant de postuler",
+      title: "Aucode - Booste tes chances d'embauche en tant que dev",
       meta: [
         {
           name: "description",
-          content: "Découvre nos Quiz dès maintenant gratuitement !",
+          content: "Valide tes compétences tech et soft skills avec Aucode !",
         },
         {
           name: "og:title",
-          content: "Teste tes acquis de développeur(se) avant de postuler",
+          content: "Booste tes chances d'embauche en tant que dev",
         },
         {
           name: "og:description",
-          content: "Découvre nos Quiz dès maintenant gratuitement !",
+          content: "Valide tes compétences tech et soft skills avec Aucode !",
         },
         {
           name: "og:image",
