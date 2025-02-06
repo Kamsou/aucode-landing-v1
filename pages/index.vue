@@ -127,8 +127,17 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
 
 <template>
   <section class="mx-auto font-regular tracking-tighter">
-    <div class="w-full md:max-w-[1440px] md:mx-auto">
-      <Header class="pt-6 md:pt-10 mx-6 md:mx-24" />
+    <div class="md:max-w-[1440px] md:mx-auto">
+      <div class="pt-6 md:pt-10 px-6 md:px-24 w-full flex items-center justify-between">
+        <Header />
+
+        <a href="https://discord.gg/G34seZAf" target="_blank" class="cursor-pointer">
+          <button class="bg-[#728AD9] text-white px-6 py-3 rounded-lg flex items-center gap-2">
+            <img src="/public/discord-logo.png" alt="Logo Discord" class="w-6 md:w-4" />
+            <span class="hidden md:block">Rejoins la communauté</span>
+          </button>
+        </a>
+      </div>
     </div>
 
     <div
