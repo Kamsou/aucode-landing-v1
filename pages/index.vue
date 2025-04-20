@@ -131,7 +131,7 @@ Elle englobe la connaissance des principaux acteurs, des débats actuels et des 
       <div class="pt-6 md:pt-10 px-6 md:px-24 w-full flex items-center justify-between">
         <Header />
 
-        <a href="https://discord.gg/G34seZAf" target="_blank" class="cursor-pointer">
+        <a href="https://discord.gg/PKdPDHTn" target="_blank" class="cursor-pointer">
           <button class="bg-[#728AD9] text-white px-6 py-3 rounded-lg flex items-center gap-2">
             <img src="/public/discord-logo.png" alt="Logo Discord" class="w-6 md:w-4" />
             <span class="hidden md:block">Rejoins la communauté</span>
