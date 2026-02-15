@@ -12,8 +12,13 @@ import IconLinkedin from "@/components/icons/IconLinkedin.vue";
 import IconX from "@/components/icons/IconX.vue";
 import IconHuman from "@/components/icons/IconHuman.vue";
 import IconEye from "@/components/icons/IconEye.vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+const Swiper = defineAsyncComponent(() =>
+  import("swiper/vue").then((m) => m.Swiper)
+);
+const SwiperSlide = defineAsyncComponent(() =>
+  import("swiper/vue").then((m) => m.SwiperSlide)
+);
+const { EffectCoverflow, Pagination } = await import("swiper/modules");
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -143,11 +148,9 @@ const topics = [
 </script>
 
 <template>
-  <section class="font-regular tracking-tighter overflow-x-hidden">
-    <!-- Header -->
+  <main class="font-regular tracking-tighter overflow-x-hidden">
     <Header />
 
-    <!-- Hero -->
     <div
       class="pt-28 md:pt-36 pb-32 md:pb-44 px-6 md:px-24 max-w-[1440px] mx-auto"
     >
@@ -159,7 +162,7 @@ const topics = [
             Les entretiens te stressent ? C'est normal.
           </h1>
           <p
-            class="mt-6 md:mt-8 text-lg md:text-xl text-green-dark/60 leading-relaxed tracking-normal"
+            class="mt-6 md:mt-8 text-lg md:text-xl text-green-dark/75 leading-relaxed tracking-normal"
           >
             Prépare-toi à ton rythme avec des quiz tech et soft skills conçus pour les devs qui veulent gagner en confiance.
           </p>
@@ -174,7 +177,6 @@ const topics = [
           class="relative w-full md:max-w-[400px] lg:max-w-[500px] mt-16 md:mt-0 opacity-0 animate-fade-in"
           style="animation-delay: 0.3s"
         >
-          <!-- Badge Rejoins-nous -->
           <Parallax :factor="0.05">
             <div
               class="hidden sm:flex bg-white/90 backdrop-blur-md shadow-lg border border-white/50 rounded-2xl absolute -top-2 -left-2 md:-left-6 py-2 px-3 text-xs font-bold items-center gap-2 z-10"
@@ -201,7 +203,6 @@ const topics = [
             height="446"
           />
 
-          <!-- Badge C'est gratuit -->
           <Parallax :factor="0.05">
             <div
               class="hidden sm:flex bg-green-light shadow-lg rounded-2xl absolute bottom-8 md:bottom-16 -right-2 md:-right-6 py-2 px-3 text-xs font-bold items-center gap-2 z-10"
@@ -222,7 +223,6 @@ const topics = [
       </div>
     </div>
 
-    <!-- Dark section -->
     <div class="w-full text-white">
       <div
         class="bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 relative"
@@ -233,9 +233,7 @@ const topics = [
         <div
           class="md:px-24 rounded-t-[3rem] relative w-full max-w-[1440px] mx-auto"
         >
-          <!-- Reviews -->
           <div class="reveal">
-            <!-- Mobile -->
             <div class="md:hidden transform -translate-y-16">
               <Swiper
                 class="w-full swiper-reviews-wrapper"
@@ -280,7 +278,6 @@ const topics = [
               </Swiper>
             </div>
 
-            <!-- Desktop -->
             <div
               class="w-full hidden md:flex gap-6 transform -translate-y-16 justify-center"
             >
@@ -311,10 +308,9 @@ const topics = [
             </div>
           </div>
 
-          <!-- Topics -->
           <div class="mt-16 md:mt-20 mb-32 md:mb-0 md:my-32 mx-6 md:mx-0 border-b border-white/10">
             <h2
-              class="reveal mb-8 md:mb-12 text-3xl md:text-5xl tracking-tighter leading-none"
+              class="reveal mb-8 md:mb-12 font-display text-3xl md:text-5xl tracking-tighter leading-none"
             >
               <span class="text-green-light">4</span> thématiques pour te préparer
             </h2>
@@ -356,7 +352,6 @@ const topics = [
             </div>
           </div>
 
-          <!-- Quiz -->
           <div
             class="reveal bg-white text-green-dark flex flex-col justify-center items-center py-10 md:py-14 mx-6 rounded-[2.5rem] md:mx-auto md:mt-24"
           >
@@ -371,7 +366,7 @@ const topics = [
             <div
               class="text-3xl md:text-5xl tracking-tighter font-extra-bold mt-4 mb-8 md:mb-12 text-center"
             >
-              <span class="text-green-light">+32</span> Quiz
+              Entraîne-toi avec <span class="text-green-light">+32</span>&nbsp;quiz
             </div>
 
             <div class="hidden md:flex justify-center gap-2">
@@ -424,20 +419,18 @@ const topics = [
             </div>
           </div>
 
-          <!-- Syndrome de l'imposteur -->
           <div class="mt-28 md:mt-48">
             <div class="mx-6 md:mx-0 reveal">
               <span class="text-white/40 text-lg md:text-xl"> En finir avec </span>
 
               <h3
-                class="mb-14 md:mb-20 text-4xl md:text-6xl tracking-tighter leading-none mt-2"
+                class="mb-14 md:mb-20 font-display text-3xl md:text-5xl tracking-tighter leading-none mt-2"
               >
                 Le syndrome de
                 <span class="text-green-light">l'imposteur</span>
               </h3>
             </div>
 
-            <!-- Mobile cards -->
             <div class="md:hidden">
               <Swiper
                 class="swiper-cards-wrapper w-full"
@@ -458,7 +451,7 @@ const topics = [
                 <SwiperSlide
                   v-for="(category, index) in categories"
                   :key="index"
-                  class="swiper-cards md:hidden group flex flex-col rounded-3xl border border-green-light/30 justify-between w-[25%] relative hover:bg-green-light transition-all duration-700"
+                  class="swiper-cards md:hidden group flex flex-col rounded-3xl border border-green-light/30 justify-end w-[25%] relative hover:bg-green-light transition-all duration-700"
                 >
                   <component
                     :is="category.icon"
@@ -466,7 +459,7 @@ const topics = [
                   />
 
                   <div
-                    class="flex flex-col h-full justify-end px-7 pb-9"
+                    class="flex flex-col pt-28 px-7 pb-9"
                   >
                     <span
                       class="text-[2rem] tracking-tighter text-green-light group-hover:text-green-dark transition-all duration-700"
@@ -483,7 +476,6 @@ const topics = [
               </Swiper>
             </div>
 
-            <!-- Desktop cards -->
             <div class="hidden md:flex md:flex-wrap w-full gap-5">
               <div
                 v-for="(category, index) in categories"
@@ -520,9 +512,8 @@ const topics = [
         </div>
       </div>
 
-      <!-- About section -->
       <div
-        class="relative w-full bg-gradient-to-r from-bg-linear-1 to-bg-linear-2"
+        class="relative w-full bg-gradient-to-r from-bg-linear-1 to-bg-linear-2 -mt-px"
       >
         <div class="px-6 md:px-24 relative h-full">
           <div class="max-w-[1440px] mx-auto">
@@ -532,10 +523,9 @@ const topics = [
 
             <div class="relative z-10">
               <h4
-                class="reveal font-extra-bold text-3xl md:text-5xl text-center tracking-tighter leading-none"
+                class="reveal font-display font-extra-bold text-3xl md:text-5xl text-center tracking-tighter leading-none"
               >
-                Qui est derrière
-                <span class="text-green-light">Aucode</span> ?
+                Qui est derrière <span class="text-green-light">Aucode</span>&nbsp;?
               </h4>
 
               <div
@@ -547,6 +537,8 @@ const topics = [
                   provider="cloudinary"
                   src="/v1737224499/Aucode/cam_ddizm7.jpg"
                   alt="Portrait de Camille, fondatrice de Aucode"
+                  width="300"
+                  height="400"
                 />
 
                 <div class="flex-1">
@@ -558,7 +550,7 @@ const topics = [
                   <p class="mt-4 text-base lg:text-lg leading-relaxed text-white/60">
                     J'ai créé Aucode pour que personne n'ait à galérer
                     seul·e avec ça. Parce que le plus dur, c'est pas le
-                    code — c'est d'oser y croire.
+                    code | c'est d'oser y croire.
                   </p>
 
                   <div class="flex gap-5 mt-6">
@@ -590,7 +582,6 @@ const topics = [
                 </div>
               </div>
 
-              <!-- Citation -->
               <div class="reveal mt-14 md:mt-20 text-center px-6 md:px-0">
                 <p
                   class="font-display text-base md:text-xl lg:text-2xl leading-snug max-w-[650px] mx-auto tracking-tight"
@@ -613,7 +604,7 @@ const topics = [
         <Footer class="relative z-10" />
       </div>
     </div>
-  </section>
+  </main>
 </template>
 
 <style>
@@ -641,7 +632,7 @@ const topics = [
 
 .swiper-cards-wrapper .swiper-slide {
   width: 18.7rem;
-  min-height: 18.8rem;
+  min-height: 20rem;
   background: transparent;
 
   &-active {

@@ -12,6 +12,8 @@
           class="w-20 md:w-24"
           width="97"
           height="34"
+          fetchpriority="high"
+          loading="eager"
         />
       </NuxtLink>
     </div>

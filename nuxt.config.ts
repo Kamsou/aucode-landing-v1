@@ -12,6 +12,10 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
 
+  features: {
+    inlineStyles: true,
+  },
+
   css: ["~/assets/css/tailwind.css"],
 
   modules: [
@@ -84,6 +88,9 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        { rel: "preload", href: "/fonts/Inter-Variable.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+        { rel: "preload", href: "/fonts/Geist-Regular.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
+        { rel: "preload", href: "/fonts/Geist-Black.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" },
         { rel: "canonical", href: "https://aucode.tech" },
         { rel: "alternate", hreflang: "fr", href: "https://aucode.tech" },
         { rel: "alternate", hreflang: "x-default", href: "https://aucode.tech" },

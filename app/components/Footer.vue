@@ -3,7 +3,6 @@
     <div
       class="max-w-[1440px] mx-auto py-12 md:py-16 flex flex-col items-center gap-10"
     >
-      <!-- Logo -->
       <NuxtImg
         format="webp"
         provider="cloudinary"
@@ -14,7 +13,6 @@
         height="34"
       />
 
-      <!-- Social links -->
       <div class="flex gap-8">
         <NuxtLink
           to="https://www.linkedin.com/company/aucode-tech"
@@ -34,16 +32,14 @@
         </NuxtLink>
       </div>
 
-      <!-- Separator -->
       <div class="w-12 h-px bg-gray-light/40" />
 
-      <!-- Legal links -->
       <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
         <NuxtLink
           to="/legal"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
+          class="text-sm text-green-dark/70 hover:text-green-dark transition-colors duration-300"
         >
           Mentions légales
         </NuxtLink>
@@ -51,7 +47,7 @@
           to="/privacy"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
+          class="text-sm text-green-dark/70 hover:text-green-dark transition-colors duration-300"
         >
           Confidentialité
         </NuxtLink>
@@ -59,14 +55,13 @@
           to="/cgv"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
+          class="text-sm text-green-dark/70 hover:text-green-dark transition-colors duration-300"
         >
           CGV
         </NuxtLink>
       </div>
 
-      <!-- Copyright -->
-      <span class="text-xs text-green-dark/30">
+      <span class="text-xs text-green-dark/60">
         Aucode {{ new Date().getFullYear() }}
       </span>
     </div>
