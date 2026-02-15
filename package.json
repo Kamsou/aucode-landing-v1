@@ -9,20 +9,20 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/supabase": "^1.1.6",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^18.17.1",
-    "nuxt": "^3.6.5"
+    "@nuxtjs/supabase": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@types/node": "^20.0.0",
+    "nuxt": "^4.0.0"
   },
   "dependencies": {
     "@egoist/tailwindcss-icons": "^1.1.0",
     "@iconify-json/simple-icons": "^1.1.70",
-    "@nuxt/image": "^1.4.0",
+    "@nuxt/image": "^2.0.0",
     "@vue-email/compiler": "^0.8.14",
     "@vue-email/nuxt": "^0.8.19",
-    "nuxt-swiper": "^1.2.2",
+    "geist": "^1.7.0",
     "resend": "^3.2.0",
+    "swiper": "^12.1.1",
     "ua-parser-js": "^1.0.38",
     "vue-email": "^0.8.11"
   }

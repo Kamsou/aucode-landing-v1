@@ -6,9 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        regular: ["Sen Regular", "sans-serif"],
-        bold: ["Sen Bold", "sans-serif"],
-        "extra-bold": ["Sen ExtraBold", "sans-serif"],
+        sans: ["Inter Variable", "sans-serif"],
+        display: ["Geist", "sans-serif"],
       },
       screens: {
         footer: "1200px",
@@ -36,6 +35,20 @@ module.exports = {
         "radial-start": "#D923FE",
         "radial-end": "#B779E4",
       }),
+      keyframes: {
+        "fade-in-up": {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        "fade-in-up": "fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      },
     },
   },
   plugins: [

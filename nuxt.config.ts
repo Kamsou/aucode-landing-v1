@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  future: {
+    compatibilityVersion: 4,
+  },
+
   image: {
     cloudinary: {
       baseURL: "https://res.cloudinary.com/augalo/image/upload/",
@@ -8,17 +12,15 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
 
+  css: ["~/assets/css/tailwind.css"],
+
   modules: [
     "@nuxtjs/supabase",
     "@nuxtjs/tailwindcss",
-    "nuxt-swiper",
     "@nuxt/image",
-    "@vue-email/nuxt",
   ],
   supabase: {
     redirect: false,
-    url: process.env.NUXT_SUPABASE_URL,
-    key: process.env.NUXT_SUPABASE_ANON_KEY,
   },
 
   app: {
@@ -27,30 +29,67 @@ export default defineNuxtConfig({
         lang: "fr",
       },
       charset: "utf-8",
-      viewport:
-        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
-      title: "Aucode — Booste tes chances d'embauche en tant que dev",
+      viewport: "width=device-width, initial-scale=1.0",
+      title: "Aucode | Prepare tes entretiens dev en confiance",
       meta: [
         {
           name: "description",
-          content: "Valide tes compétences tech et soft skills avec Aucode !",
+          content:
+            "Les entretiens te stressent ? Prepare-toi a ton rythme avec des quiz tech et soft skills conçus pour les devs juniors. +32 quiz gratuits, front-end, back-end et culture tech.",
         },
         {
-          name: "og:title",
-          content: "Booste tes chances d'embauche en tant que dev",
+          name: "keywords",
+          content:
+            "aucode, quiz dev, entretien developpeur, confiance en soi, syndrome imposteur, dev junior, soft skills, front-end, back-end, preparation entretien",
+        },
+        { name: "author", content: "Aucode" },
+        { name: "robots", content: "index, follow" },
+        { name: "theme-color", content: "#F2F2F2" },
+        { "http-equiv": "content-language", content: "fr" },
+        { name: "geo.region", content: "FR" },
+        { name: "geo.placename", content: "France" },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://aucode.tech" },
+        { property: "og:site_name", content: "Aucode" },
+        { property: "og:locale", content: "fr_FR" },
+        {
+          property: "og:title",
+          content: "Aucode | Prepare tes entretiens dev en confiance",
         },
         {
-          name: "og:description",
-          content: "Valide tes compétences tech et soft skills avec Aucode !",
+          property: "og:description",
+          content:
+            "Quiz tech et soft skills pour les devs qui veulent gagner en confiance. +32 quiz gratuits pour preparer tes entretiens.",
         },
         {
-          name: "og:image",
+          property: "og:image",
+          content:
+            "https://res.cloudinary.com/augalo/image/upload/v1691340575/Aucode/mockup_mwxo0t.png",
+        },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@aucode_app" },
+        {
+          name: "twitter:title",
+          content: "Aucode | Prepare tes entretiens dev en confiance",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Quiz tech et soft skills pour les devs qui veulent gagner en confiance. +32 quiz gratuits pour preparer tes entretiens.",
+        },
+        {
+          name: "twitter:image",
           content:
             "https://res.cloudinary.com/augalo/image/upload/v1691340575/Aucode/mockup_mwxo0t.png",
         },
       ],
+      link: [
+        { rel: "canonical", href: "https://aucode.tech" },
+        { rel: "alternate", hreflang: "fr", href: "https://aucode.tech" },
+        { rel: "alternate", hreflang: "x-default", href: "https://aucode.tech" },
+      ],
     },
   },
 
-  compatibilityDate: "2025-01-16",
+  compatibilityDate: "2026-02-15",
 });

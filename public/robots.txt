@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /reset-password
+Disallow: /confirm-email
+
+Sitemap: https://aucode.tech/sitemap.xml

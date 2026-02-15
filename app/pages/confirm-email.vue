@@ -55,12 +55,9 @@ onMounted(async () => {
 
     if (error) {
       if (error.status === 404) {
-        console.error("Token not found");
         router.push("/");
         return;
       }
-
-      console.error("Error verifying OTP:", error);
       errorMessage.value =
         "Une erreur s'est produite lors de la confirmation. Veuillez nous contacter si le problème persiste.";
       return;

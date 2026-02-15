@@ -1,0 +1,14 @@
+# Aucode
+
+> Aucode est une application mobile gratuite qui aide les développeurs juniors à préparer leurs entretiens tech et à gagner confiance en leurs compétences. +32 quiz en front-end, back-end, culture tech et soft skills.
+
+## À propos
+
+Aucode cible les devs en début de carrière qui font face au syndrome de l'imposteur et au stress des entretiens. L'app propose des quiz techniques et soft skills pour progresser à son rythme.
+
+## Liens
+
+- [Accueil](https://aucode.tech/): Page principale avec présentation de l'app et des thématiques
+- [Mentions légales](https://aucode.tech/legal): Mentions légales
+- [Politique de confidentialité](https://aucode.tech/privacy): Politique de confidentialité
+- [CGV](https://aucode.tech/cgv): Conditions générales de vente

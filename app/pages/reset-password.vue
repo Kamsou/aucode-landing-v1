@@ -38,7 +38,7 @@ async function modifyUser() {
 }
 
 function redirectToApp() {
-  if (process.client) {
+  if (import.meta.client) {
     const isAndroid = navigator.userAgent.match(/Android/i);
     const isIos = navigator.userAgent.match(/iPhone|iPad|iPod/i);
 
