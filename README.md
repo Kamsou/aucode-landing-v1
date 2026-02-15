@@ -1,63 +1,39 @@
-# Nuxt 3 Minimal Starter
+# Aucode
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Landing page for [Aucode](https://aucode.tech) — a free mobile app helping junior developers prepare for tech interviews with 32+ quizzes covering front-end, back-end, tech culture & soft skills.
+
+## Tech Stack
+
+- **Framework** — [Nuxt 4](https://nuxt.com)
+- **Styling** — [Tailwind CSS](https://tailwindcss.com)
+- **Database** — [Supabase](https://supabase.com)
+- **Fonts** — Geist (headings) + Inter Variable (body)
+- **Hosting** — [Netlify](https://netlify.com)
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Development
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+pnpm dev
 ```
 
 ## Production
 
-Build the application for production:
-
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+pnpm generate
 ```
 
-Locally preview production build:
+Preview locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+npx serve .output/public
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## License
+
+All rights reserved — Dendea Production.
