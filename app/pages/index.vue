@@ -539,76 +539,61 @@ const topics = [
               </h4>
 
               <div
-                class="reveal mt-12 md:mt-16 flex flex-col lg:flex-row gap-10 md:gap-16 items-center"
+                class="reveal mt-12 md:mt-16 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center max-w-[900px] mx-auto"
               >
-                <div
-                  class="flex flex-col justify-center items-center w-full lg:w-[40%]"
-                >
-                  <div>
-                    <NuxtImg
-                      format="webp"
-                      class="bg-cover w-full max-h-[260px] md:max-h-[360px] object-cover rounded-2xl"
-                      provider="cloudinary"
-                      src="/v1737224499/Aucode/cam_ddizm7.jpg"
-                      alt="Portrait de Camille, fondatrice de Aucode"
-                    />
+                <NuxtImg
+                  format="webp"
+                  class="w-full max-w-[280px] lg:max-w-[300px] rounded-xl object-contain"
+                  provider="cloudinary"
+                  src="/v1737224499/Aucode/cam_ddizm7.jpg"
+                  alt="Portrait de Camille, fondatrice de Aucode"
+                />
 
-                    <div
-                      class="flex justify-center items-center lg:justify-normal gap-6 mt-5"
+                <div class="flex-1">
+                  <p class="text-base lg:text-lg leading-relaxed text-white/60">
+                    Moi c'est Camille. Je crée des apps depuis des années
+                    et j'ai connu le stress des entretiens, le syndrome de
+                    l'imposteur, le doute permanent.
+                  </p>
+                  <p class="mt-4 text-base lg:text-lg leading-relaxed text-white/60">
+                    J'ai créé Aucode pour que personne n'ait à galérer
+                    seul·e avec ça. Parce que le plus dur, c'est pas le
+                    code — c'est d'oser y croire.
+                  </p>
+
+                  <div class="flex gap-5 mt-6">
+                    <NuxtLink
+                      to="https://www.linkedin.com/in/camille-coutens-9a0960a5/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="cursor-pointer hover:opacity-70 transition-opacity"
+                      aria-label="Lien vers le profil Linkedin de Camille"
                     >
-                      <NuxtLink
-                        to="https://www.linkedin.com/in/camille-coutens-9a0960a5/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cursor-pointer hover:opacity-70 transition-opacity"
-                        aria-label="Lien vers le profil Linkedin de Camille"
-                      >
-                        <component
-                          :is="IconLinkedin"
-                          class="w-5 h-5 text-green-light"
-                        />
-                      </NuxtLink>
-                      <NuxtLink
-                        to="https://twitter.com/camillecoutens"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cursor-pointer hover:opacity-70 transition-opacity"
-                        aria-label="Lien vers le profil Twitter de Camille"
-                      >
-                        <component
-                          :is="IconX"
-                          class="w-5 h-5 text-green-light"
-                        />
-                      </NuxtLink>
-                    </div>
+                      <component
+                        :is="IconLinkedin"
+                        class="w-5 h-5 text-green-light"
+                      />
+                    </NuxtLink>
+                    <NuxtLink
+                      to="https://twitter.com/camillecoutens"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="cursor-pointer hover:opacity-70 transition-opacity"
+                      aria-label="Lien vers le profil Twitter de Camille"
+                    >
+                      <component
+                        :is="IconX"
+                        class="w-5 h-5 text-green-light"
+                      />
+                    </NuxtLink>
                   </div>
-                </div>
-
-                <div class="w-full lg:w-[60%] text-base md:text-sm">
-                  <p class="mb-4 leading-relaxed text-white/60">
-                    Je m'appelle Camille. À mes débuts dans le dev, j'ai
-                    travaillé auprès d'agences et de startups innovantes en
-                    France. J'y ai rencontré de formidables personnes qui m'ont
-                    appris et soutenu.
-                  </p>
-                  <p class="mb-4 leading-relaxed text-white/60">
-                    Par la suite, j'ai voulu créer quelque chose de personnel
-                    en lançant mes propres projets : d'abord Augalo, une
-                    application pour les cavaliers et cavalières, puis Aucode,
-                    pour les codeur·se·s.
-                  </p>
-                  <p class="leading-relaxed text-white/60">
-                    J'ai toujours cru en la force de la collaboration, mais
-                    j'ai aussi réalisé que la confiance en soi est fondamentale
-                    pour tout·e développeur·se, peu importe son expérience.
-                  </p>
                 </div>
               </div>
 
               <!-- Citation -->
               <div class="reveal mt-14 md:mt-20 text-center px-6 md:px-0">
                 <p
-                  class="text-base md:text-xl lg:text-2xl leading-snug w-full md:w-[85%] mx-auto tracking-tight"
+                  class="font-display text-base md:text-xl lg:text-2xl leading-snug max-w-[650px] mx-auto tracking-tight"
                 >
                   <span class="text-green-light">Aucode</span> est né d'une
                   conviction : chaque dev mérite d'avoir confiance en ses

@@ -41,18 +41,24 @@
       <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
         <NuxtLink
           to="/legal"
+          target="_blank"
+          rel="noopener noreferrer"
           class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
         >
-          Mentions legales
+          Mentions légales
         </NuxtLink>
         <NuxtLink
           to="/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
           class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
         >
-          Confidentialite
+          Confidentialité
         </NuxtLink>
         <NuxtLink
           to="/cgv"
+          target="_blank"
+          rel="noopener noreferrer"
           class="text-sm text-green-dark/50 hover:text-green-dark transition-colors duration-300"
         >
           CGV
