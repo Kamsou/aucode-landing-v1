@@ -24,19 +24,19 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 useSeoMeta({
-  title: "Aucode | Prepare tes entretiens dev en confiance",
+  title: "Aucode | Prépare tes entretiens tech en confiance",
   description:
-    "Les entretiens te stressent ? Prepare-toi a ton rythme avec des quiz tech et soft skills conçus pour les devs juniors. +32 quiz gratuits, front-end, back-end et culture tech.",
-  ogTitle: "Aucode | Prepare tes entretiens dev en confiance",
+    "Ton prochain entretien tech ? Tu vas le gérer. +32 quiz gratuits pour se préparer aux entretiens techniques en confiance.",
+  ogTitle: "Aucode | Prépare tes entretiens tech en confiance",
   ogDescription:
-    "Quiz tech et soft skills pour les devs qui veulent gagner en confiance. +32 quiz gratuits pour preparer tes entretiens.",
+    "Des quiz tech et soft skills pour gagner en confiance avant un entretien. +32 quiz gratuits.",
   ogImage:
     "https://res.cloudinary.com/augalo/image/upload/v1691340575/Aucode/mockup_mwxo0t.png",
   ogUrl: "https://aucode.tech",
   twitterCard: "summary_large_image",
-  twitterTitle: "Aucode | Prepare tes entretiens dev en confiance",
+  twitterTitle: "Aucode | Prépare tes entretiens tech en confiance",
   twitterDescription:
-    "Quiz tech et soft skills pour les devs qui veulent gagner en confiance. +32 quiz gratuits pour preparer tes entretiens.",
+    "Des quiz tech et soft skills pour gagner en confiance avant un entretien. +32 quiz gratuits.",
   twitterImage:
     "https://res.cloudinary.com/augalo/image/upload/v1691340575/Aucode/mockup_mwxo0t.png",
 });
@@ -72,7 +72,7 @@ const categories = [
     icon: IconDialog,
     title: "Communication",
     description:
-      "Apprends à expliquer simplement des concepts techniques, sans te sentir illégitime.",
+      "Apprends à expliquer simplement des concepts techniques, sans te sentir illégitime·e.",
   },
   {
     icon: IconHeart,
@@ -152,29 +152,29 @@ const topics = [
     <Header />
 
     <div
-      class="pt-28 md:pt-36 pb-32 md:pb-44 px-6 md:px-24 max-w-[1440px] mx-auto"
+      class="pt-12 md:pt-20 pb-24 md:pb-36 px-6 md:px-24 max-w-[1440px] mx-auto"
     >
-      <div class="md:flex md:items-center md:justify-between md:gap-16">
-        <div class="w-full md:max-w-[55%] animate-fade-in-up">
+      <div class="lg:flex lg:items-center lg:justify-between lg:gap-12">
+        <div class="w-full lg:max-w-[50%] animate-fade-in-up">
           <h1
-            class="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-extra-bold text-green-dark leading-[1.05] tracking-tighter"
+            class="text-[2.25rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extra-bold text-green-dark leading-[1.1] tracking-tighter"
           >
-            Les entretiens te stressent ? C'est normal.
+            Ton prochain entretien tech ?<br />Tu vas le gérer.
           </h1>
           <p
-            class="mt-6 md:mt-8 text-lg md:text-xl text-green-dark/75 leading-relaxed tracking-normal"
+            class="mt-4 lg:mt-6 text-lg lg:text-xl text-green-dark/75 leading-relaxed tracking-normal"
           >
-            Prépare-toi à ton rythme avec des quiz tech et soft skills conçus pour les devs qui veulent gagner en confiance.
+            Des quiz conçus pour celles et ceux qui veulent arrêter de se sentir illégitimes en entretien.
           </p>
           <div
-            class="flex flex-col md:flex-row gap-4 md:gap-6 mt-10 md:mt-12"
+            class="flex flex-col sm:flex-row gap-3 lg:gap-4 mt-8 lg:mt-10"
           >
             <Buttons />
           </div>
         </div>
 
         <div
-          class="relative w-full md:max-w-[400px] lg:max-w-[500px] mt-16 md:mt-0 opacity-0 animate-fade-in"
+          class="relative w-full lg:max-w-[400px] xl:max-w-[500px] mt-16 lg:mt-0 opacity-0 animate-fade-in"
           style="animation-delay: 0.3s"
         >
           <Parallax :factor="0.05">
@@ -312,7 +312,7 @@ const topics = [
             <h2
               class="reveal mb-8 md:mb-12 font-display text-3xl md:text-5xl tracking-tighter leading-none"
             >
-              <span class="text-green-light">4</span> thématiques pour te préparer
+              <span class="text-green-light">4</span> thématiques pour t'entraîner
             </h2>
 
             <div
@@ -587,8 +587,8 @@ const topics = [
                   class="font-display text-base md:text-xl lg:text-2xl leading-snug max-w-[650px] mx-auto tracking-tight"
                 >
                   <span class="text-green-light">Aucode</span> est né d'une
-                  conviction : chaque dev mérite d'avoir confiance en ses
-                  compétences. Pas besoin d'être senior pour être légitime.
+                  conviction : chacun·e mérite d'avoir confiance en ses
+                  compétences. Pas besoin d'être senior·e pour être légitime.
                 </p>
               </div>
 

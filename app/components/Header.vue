@@ -1,7 +1,7 @@
 <template>
   <header>
     <div
-      class="max-w-[1440px] mx-auto flex items-center px-6 md:px-24 py-4 md:py-5"
+      class="max-w-[1440px] mx-auto flex items-center justify-center px-6 md:px-24 py-4 md:py-5"
     >
       <NuxtLink to="/">
         <NuxtImg
